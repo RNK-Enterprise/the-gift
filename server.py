@@ -18,7 +18,12 @@ by design; bulk/programmatic access should use git or rsync.
 At most GIFT_MAX_CONCURRENT requests are in flight at once; beyond that,
 new requests get an immediate 503 instead of piling up work. The slot is
 taken per request, not per connection, so a browser's idle keep-alive
-connections never consume serving capacity.
+connections never consume serving capacity. /healthz is exempt: it answers
+"is the process up", and a busy server is up. Refusals are summarised on
+stderr (journald) at most once a minute.
+
+Access logging is off by default; GIFT_ACCESS_LOG=1 writes one line per
+request to stderr. Errors are always logged.
 
   GET /                → landing page (library counts, links to browse)
   GET /<path>/         → browsable listing
@@ -30,9 +35,10 @@ import mimetypes
 import os
 import sys
 import threading
+import time
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import unquote
+from urllib.parse import quote, unquote
 
 PORT = int(os.environ.get("GIFT_PORT", "8770"))
 HOST = os.environ.get("GIFT_HOST", "0.0.0.0")
@@ -41,6 +47,13 @@ HOST = os.environ.get("GIFT_HOST", "0.0.0.0")
 CHUNK_SIZE = 256 * 1024
 
 MAX_CONCURRENT = int(os.environ.get("GIFT_MAX_CONCURRENT", "32"))
+ACCESS_LOG = os.environ.get("GIFT_ACCESS_LOG") == "1"
+
+REPO_URL = "https://github.com/lisasdungeon/the-gift"
+
+# HTML pages only need their own inline styles and the data: favicon
+HTML_CSP = ("default-src 'none'; style-src 'unsafe-inline'; img-src data:; "
+            "base-uri 'none'; form-action 'none'; frame-ancestors 'none'")
 
 ROOT = Path(__file__).resolve().parent
 
@@ -98,8 +111,8 @@ PAGE = """<!doctype html>
   <p class="eyebrow">RNK Studios · Open</p>
   <h1>The Gift</h1>
   <p class="lede">
-    A personal library of free, public-domain and openly-licensed Bible
-    translations and study resources, pulled together from established
+    A personal library of free-to-read Bible translations and study
+    resources, most of them public domain, pulled together from established
     open-data projects. Nothing paywalled, DRM'd, or account-gated.
   </p>
 
@@ -115,8 +128,9 @@ PAGE = """<!doctype html>
          files, useful for scripting and programmatic reading.</p>
     </a>
     <a class="door" href="/Bibles/formats/correlate/">
-      <h2>Bibles — correlate data</h2>
-      <p>Cross-reference / alignment data accompanying the translations.</p>
+      <h2>Bibles — correlate scripts</h2>
+      <p>Small Node.js word-concordance scripts, one per book and
+         translation. They read the Python files above, so download both.</p>
     </a>
     <a class="door" href="/Study%20Guides/">
       <h2>Study Guides · {sword_count} SWORD modules</h2>
@@ -126,9 +140,11 @@ PAGE = """<!doctype html>
   </div>
 
   <p class="foot">
-    Free to use — mostly public domain; a few modules carry their own
-    per-file notes. See the <a href="/README.md">README</a> and
-    <a href="/LICENSE">LICENSE</a>. Bulk access: use git or rsync, not HTTP.
+    Free to read — mostly public domain, but not all: each translation's
+    licence is listed in <a href="/Bibles/README.md">Bibles/README.md</a>.
+    See also the <a href="/README.md">README</a> and
+    <a href="/LICENSE">LICENSE</a>. For bulk access, clone the
+    <a href="{repo_url}">git repository</a> instead of crawling this site.
   </p>
 </main>
 </body>
@@ -152,6 +168,21 @@ def count_visible(d, predicate=lambda p: True):
         return 0
 
 
+def is_exposed(path):
+    """True if `path` really lives inside ROOT and nowhere hidden — resolving
+    symlinks, so a link can't smuggle a hidden or outside tree into view."""
+    try:
+        real = Path(path).resolve()
+    except (OSError, ValueError):
+        return False
+    if real == ROOT:
+        return True
+    if not str(real).startswith(str(ROOT) + os.sep):
+        return False
+    return not any(part in HIDDEN or part.startswith(".")
+                   for part in real.relative_to(ROOT).parts)
+
+
 def landing_page():
     text_count = count_visible(ROOT / "Bibles/formats/text", lambda e: e.name.endswith(".txt"))
     py_dir = ROOT / "Bibles/formats/python"
@@ -160,22 +191,22 @@ def landing_page():
     sword_count = count_visible(ROOT / "Study Guides/Commentaries and Reference/mods.d", lambda e: e.name.endswith(".conf"))
     return PAGE.format(text_count=text_count, python_dirs=python_dirs,
                        python_files=f"{python_files:,}", sword_count=sword_count,
-                       favicon=FAVICON).encode("utf-8")
+                       favicon=FAVICON, repo_url=REPO_URL).encode("utf-8")
 
 
-_py_files_cache = None
+_py_files_cache = {}
 
 
 def _cached_py_files(d):
-    """Recursive .py count — the library is static while serving, so compute once."""
-    global _py_files_cache
-    if _py_files_cache is None:
+    """Recursive .py count — the library is static while serving, so compute once per tree."""
+    key = str(d)
+    if key not in _py_files_cache:
         n = 0
         for base, dirs, files in os.walk(d):
             dirs[:] = [x for x in dirs if x not in HIDDEN and not x.startswith(".")]
             n += sum(1 for f in files if f.endswith(".py"))
-        _py_files_cache = n
-    return _py_files_cache
+        _py_files_cache[key] = n
+    return _py_files_cache[key]
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -186,10 +217,16 @@ class Handler(BaseHTTPRequestHandler):
     def version_string(self):
         return self.server_version
 
+    def end_headers(self):
+        self.send_header("X-Content-Type-Options", "nosniff")
+        super().end_headers()
+
     def _send(self, code, body, content_type, cache_control=None):
         self.send_response(code)
         self.send_header("Content-Type", content_type)
         self.send_header("Content-Length", str(len(body)))
+        if content_type.startswith("text/html"):
+            self.send_header("Content-Security-Policy", HTML_CSP)
         if cache_control:
             self.send_header("Cache-Control", cache_control)
         self.end_headers()
@@ -206,9 +243,13 @@ class Handler(BaseHTTPRequestHandler):
         self._handle()
 
     def _handle(self):
+        # liveness must not depend on load: a saturated server is still up
+        if self.path.partition("?")[0] == "/healthz":
+            return self._serve()
         # one serving slot per request, not per connection — taken only once
         # the request is parsed, released when the response is written
         if not self.server._slots.acquire(blocking=False):
+            self.server.note_busy()
             return self._send(503, b'{"error": "server busy"}',
                               "application/json; charset=utf-8",
                               cache_control="no-store")
@@ -245,7 +286,9 @@ class Handler(BaseHTTPRequestHandler):
         if candidate.is_dir():
             parts = [p for p in path.split("/") if p]
             rel = Path(*parts) if parts else Path()
-            if any(part in HIDDEN or part.startswith(".") for part in parts):
+            # check both what was asked for and where a symlink really points
+            if any(part in HIDDEN or part.startswith(".")
+                   for part in (*parts, *candidate.relative_to(ROOT).parts)):
                 return self._not_found()
             if not raw_path.endswith("/"):
                 # canonicalise directories to a trailing slash so relative links work
@@ -308,21 +351,25 @@ class Handler(BaseHTTPRequestHandler):
 
     def _send_listing(self, d, rel):
         try:
-            entries = [e for e in os.scandir(d) if e.name not in HIDDEN and not e.name.startswith(".")]
+            entries = [e for e in os.scandir(d)
+                       if e.name not in HIDDEN and not e.name.startswith(".")
+                       and (not e.is_symlink() or is_exposed(e.path))]
         except OSError:
             return self._not_found()
         dirs = sorted((e for e in entries if e.is_dir()), key=lambda e: e.name.lower())
         files = sorted((e for e in entries if not e.is_dir()), key=lambda e: e.name.lower())
 
         def href_for(e):
-            name = html.escape(e.name, quote=True)
+            # URL-encode first (so #, ? and % in names stay part of the path),
+            # then HTML-escape for the attribute
+            name = html.escape(quote(e.name, safe=""), quote=True)
             return f"{name}/" if e.is_dir() else name
 
         crumbs = '<a href="/">The Gift</a>'
         acc = ""
         for part in rel.parts:
-            acc += "/" + html.escape(part, quote=True)
-            crumbs += f' / <a href="{acc}/">{html.escape(part)}</a>'
+            acc += "/" + quote(part, safe="")
+            crumbs += f' / <a href="{html.escape(acc, quote=True)}/">{html.escape(part)}</a>'
 
         rows = ""
         for e in dirs:
@@ -341,7 +388,12 @@ class Handler(BaseHTTPRequestHandler):
         self._send(200, body, "text/html; charset=utf-8")
 
     def log_message(self, fmt, *args):
-        pass  # a quiet public server
+        # a quiet public server by default; GIFT_ACCESS_LOG=1 for per-request lines
+        if ACCESS_LOG:
+            super().log_message(fmt, *args)
+
+    def log_error(self, fmt, *args):
+        super().log_message(fmt, *args)  # errors are always worth a line
 
 
 LISTING = """<!doctype html>
@@ -388,9 +440,25 @@ class BoundedThreadingHTTPServer(ThreadingHTTPServer):
 
     daemon_threads = True
 
+    BUSY_REPORT_INTERVAL = 60  # seconds between "refused N requests" lines
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self._slots = threading.Semaphore(MAX_CONCURRENT)
+        self._busy_lock = threading.Lock()
+        self._busy_count = 0
+        self._busy_reported = float("-inf")
+
+    def note_busy(self):
+        """Count a 503 refusal; summarise on stderr at most once a minute."""
+        with self._busy_lock:
+            self._busy_count += 1
+            now = time.monotonic()
+            if now - self._busy_reported < self.BUSY_REPORT_INTERVAL:
+                return
+            n, self._busy_count, self._busy_reported = self._busy_count, 0, now
+        sys.stderr.write(f"The Gift: refused {n} request(s) with 503 "
+                         f"(all {MAX_CONCURRENT} slots busy)\n")
 
     def handle_error(self, request, client_address):
         # a client hanging up mid-transfer is the normal case on the public

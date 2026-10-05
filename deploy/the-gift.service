@@ -1,0 +1,36 @@
+# /etc/systemd/system/the-gift.service — install with:
+#   sudo cp deploy/the-gift.service /etc/systemd/system/ && sudo systemctl daemon-reload
+# This file is the source of truth; edit it here, not on the box.
+[Unit]
+Description=The Gift (open library)
+After=network.target
+
+[Service]
+User=www-data
+WorkingDirectory=/opt/rnk/the-gift
+Environment=GIFT_HOST=0.0.0.0
+Environment=GIFT_PORT=8770
+# Files stream to the client in chunks, so RSS stays flat regardless of
+# file size; the cap bounds worker threads, not memory.
+Environment=GIFT_MAX_CONCURRENT=32
+# One line per request to the journal; off by default (errors always log).
+#Environment=GIFT_ACCESS_LOG=1
+ExecStart=/usr/bin/python3 server.py
+Restart=always
+RestartSec=3
+
+# The server only ever reads the checkout.
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+MemoryMax=512M
+TasksMax=256
+
+[Install]
+WantedBy=multi-user.target

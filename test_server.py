@@ -11,7 +11,6 @@ os.environ.setdefault("GIFT_MAX_CONCURRENT", "3")
 
 import http.client
 import hashlib
-import os
 import socket
 import tempfile
 import threading
@@ -38,6 +37,13 @@ class GiftServerTestCase(unittest.TestCase):
         (root / "deploy" / "deploy.sh").write_text("#!/bin/sh\necho hi\n")
         (root / ".git").mkdir()
         (root / ".git" / "config").write_text("[core]\n")
+        (root / ".claude").mkdir()
+        (root / ".claude" / "settings.json").write_text("{}\n")
+        (root / "model").mkdir()
+        (root / "model" / "weights.txt").write_text("private\n")
+        # a symlink inside the library that points at a hidden tree
+        (root / "Bibles" / "sneaky").symlink_to(root / "model", target_is_directory=True)
+        (root / "Bibles" / "odd #1?%.txt").write_text("odd name\n")
 
         cls._orig_root = gift.ROOT
         gift.ROOT = root
@@ -199,7 +205,8 @@ class GiftServerTestCase(unittest.TestCase):
         blocked = threading.Event()
 
         def gate(self):
-            blocked.wait(timeout=10)  # request stays in flight until released
+            if self.path != "/healthz":  # healthz bypasses the cap entirely
+                blocked.wait(timeout=10)  # request stays in flight until released
             return orig_serve(self)
 
         # park each request inside the handler's serve step so it holds a slot
@@ -214,8 +221,13 @@ class GiftServerTestCase(unittest.TestCase):
                     c.request("GET", "/")
                     conns.append(c)
                 time.sleep(0.3)  # let them parse and claim every slot
-                resp, _ = self.request("GET", "/healthz")
+                resp, _ = self.request("GET", "/README.md")
                 self.assertEqual(resp.status, 503)
+
+                # liveness is not load: healthz still answers while full
+                resp, body = self.request("GET", "/healthz")
+                self.assertEqual(resp.status, 200)
+                self.assertIn(b'"ok": true', body)
 
                 blocked.set()  # release the parked requests
                 for c in conns:
@@ -225,16 +237,68 @@ class GiftServerTestCase(unittest.TestCase):
 
                 # the connection opened while full was never bounced — its
                 # request is served normally now that slots are free
-                idle.request("GET", "/healthz")
+                idle.request("GET", "/README.md")
                 r2 = idle.getresponse()
                 self.assertEqual(r2.status, 200)
                 r2.read()
             finally:
+                blocked.set()  # never leave requests parked if an assert fails
                 idle.close()
                 for c in conns:
                     c.close()
         finally:
             gift.Handler._serve = orig_serve
+
+    def test_hidden_model_file_blocked(self):
+        resp, _ = self.request("GET", "/model/weights.txt")
+        self.assertEqual(resp.status, 404)
+
+    def test_hidden_model_listing_blocked(self):
+        resp, _ = self.request("GET", "/model/")
+        self.assertEqual(resp.status, 404)
+
+    def test_hidden_dotclaude_blocked(self):
+        resp, _ = self.request("GET", "/.claude/settings.json")
+        self.assertEqual(resp.status, 404)
+
+    def test_symlink_into_hidden_tree_blocked(self):
+        """A symlink inside the library must not expose what it points at."""
+        resp, _ = self.request("GET", "/Bibles/sneaky/")
+        self.assertEqual(resp.status, 404)
+        resp, _ = self.request("GET", "/Bibles/sneaky/weights.txt")
+        self.assertEqual(resp.status, 404)
+
+    def test_listing_omits_symlink_into_hidden_tree(self):
+        resp, body = self.request("GET", "/Bibles/")
+        self.assertEqual(resp.status, 200)
+        self.assertNotIn(b"sneaky", body)
+        self.assertIn(b"sample.txt", body)
+
+    def test_index_html_is_landing_page(self):
+        resp, body = self.request("GET", "/index.html")
+        self.assertEqual(resp.status, 200)
+        self.assertIn(b"<h1>The Gift</h1>", body)
+
+    def test_listing_links_are_url_encoded(self):
+        """#, ? and % in a file name must not break its link."""
+        resp, body = self.request("GET", "/Bibles/")
+        self.assertIn(b'href="odd%20%231%3F%25.txt"', body)
+        self.assertIn(b"odd #1?%.txt", body)  # displayed name unchanged
+        resp, body = self.request("GET", "/Bibles/odd%20%231%3F%25.txt")
+        self.assertEqual(resp.status, 200)
+        self.assertEqual(body, b"odd name\n")
+
+    def test_redirect_keeps_query(self):
+        resp, _ = self.request("GET", "/Bibles?x=1")
+        self.assertEqual(resp.status, 301)
+        self.assertTrue(resp.getheader("Location", "").endswith("/Bibles/?x=1"))
+
+    def test_security_headers(self):
+        resp, _ = self.request("GET", "/")
+        self.assertEqual(resp.getheader("X-Content-Type-Options"), "nosniff")
+        self.assertIn("default-src 'none'", resp.getheader("Content-Security-Policy", ""))
+        resp, _ = self.request("GET", "/README.md")
+        self.assertEqual(resp.getheader("X-Content-Type-Options"), "nosniff")
 
     def test_keepalive_requests_all_served(self):
         """Several requests over one connection all get served (no per-

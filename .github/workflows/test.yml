@@ -16,8 +16,12 @@ jobs:
           sparse-checkout: |
             server.py
             test_server.py
+            test_deploy_scripts.py
+            deploy/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - run: python3 -m unittest test_server -v
+      - run: python3 -m unittest test_server test_deploy_scripts -v
+      # shellcheck ships on GitHub's ubuntu runners
+      - run: shellcheck deploy/*.sh

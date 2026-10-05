@@ -1,0 +1,14 @@
+# /etc/logrotate.d/the-gift — install with:
+#   sudo cp deploy/gift.logrotate /etc/logrotate.d/the-gift
+# The healthcheck appends an "ok" line every 5 minutes (~105k lines a year).
+# Both scripts reopen their log on every run, so no copytruncate is needed.
+/home/rnk/gift-health.log /home/rnk/deadman.log {
+    su rnk rnk
+    weekly
+    rotate 8
+    compress
+    delaycompress
+    missingok
+    notifempty
+    create 0644 rnk rnk
+}

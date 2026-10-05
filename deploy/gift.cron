@@ -1,0 +1,14 @@
+# The Gift's monitoring entries for rnk's crontab on atlas (192.168.1.202).
+# atlas's crontab is managed by rnk-sovereign: this file is the source of
+# truth for these lines, which rnk-sovereign installs. Paths point straight
+# into the checkout, so a `git pull` updates the scripts and there are no
+# hand-copied versions to drift.
+#
+# Public-door healthcheck: every 5 minutes; emails on down/recovery and if
+# the deadman switch stops running.
+*/5 * * * *   /opt/rnk/the-gift/deploy/gift-healthcheck.sh
+# Deadman switch: 2 minutes offset from the healthcheck it watches.
+# NOT YET ACTIVE: atlas still runs the older ~/deadman.sh, which also watches
+# atlas-wide sysstat (see deploy/HOSTING.md §6). Swap to this line once that
+# watch has moved to rnk-sovereign.
+#2-59/5 * * * * /opt/rnk/the-gift/deploy/deadman.sh
