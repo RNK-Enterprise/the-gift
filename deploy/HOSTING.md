@@ -136,3 +136,31 @@ identically by both copies. If the old copy does not touch
 `/home/rnk/.deadman.last-run`, the healthcheck will send one
 `[WARN] gift deadman switch not running` email. That is the cross-watch
 correctly reporting that the repo's deadman isn't the one running.
+
+
+## 7. Bible chat (Domain + grounded adapter)
+
+Private stack on atlas (not in the public git tree — lives under `~/gift-model/`
+and `~/bible-train/`):
+
+| Piece | Where |
+|---|---|
+| llama-server (CPU, `-ngl 0`) | pm2 `gift-bible-llama` → `127.0.0.1:8081` |
+| Grounded FastAPI adapter | pm2 `gift-bible-adapter` → `127.0.0.1:8000` |
+| Verse index | `~/gift-model/data/verses-pd.db` |
+| GGUF | `~/gift-model/gguf/bible-1.7b-q4_k_m.gguf` (falls back to base Qwen3-1.7B until fine-tune finishes) |
+| Domain model id | `bible-1.7b` in `~/curator-runtime/server/data/models.json` |
+
+Chat UI is the existing Domain API on `:4000`. Pick **The Gift — Bible Study**.
+Public doors:
+
+- `https://alpha.rnk-enterprise.us/` (API under `/api`, already tunneled)
+- `gift-chat.rnkstudios.uk` is configured in `~/.cloudflared/rnkstudios-web.yml`
+  → `:4000`; create the Cloudflare public-hostname/DNS for that name in the
+  `rnkstudios.uk` zone (atlas `cloudflared` is logged into a different zone
+  and cannot create it automatically).
+
+Fine-tune / retrain: `~/bible-train/launch_train.sh` then
+`~/bible-train/finish_pipeline.sh` (detached). When the pipeline completes it
+copies the GGUF into `gift-model`, restarts `gift-bible-llama`, and brings
+`ld-lore-llm` back (training borrows that GPU).
