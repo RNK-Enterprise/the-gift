@@ -332,7 +332,7 @@ CHAPTERS = {
         27: 'Vì Ðức Giê-hô-va vạn quân đã toan định, thì ai bãi đi được? Tay Ngài đã giang ra, thì ai day lại được?',
         28: 'Nhằm năm vua A-cha băng, gánh nặng nầy đã được rao ra:',
         29: 'Hỡi cả đất Phi-li-tin, chớ vui mừng bởi cớ roi đánh ngươi đã gãy; vì từ giống rắn sẽ sanh ra thuồng luồng, thuồng luồng sẽ sanh ra rắn lửa bay.',
-        30: 'Bấy giṀ\x9d con cả của kẻ nghèo sẽ tìm được đồ ăn, kẻ túng sẽ nằm yên ổn; nhưng ta sẽ khiến dòng dõi ngươi chết đói, và kẻ thuộc về ngươi cón sót lại sẽ bị giết.',
+        30: 'Bấy giờ con cả của kẻ nghèo sẽ tìm được đồ ăn, kẻ túng sẽ nằm yên ổn; nhưng ta sẽ khiến dòng dõi ngươi chết đói, và kẻ thuộc về ngươi cón sót lại sẽ bị giết.',
         31: 'Hỡi cửa, hãy than khóc! Hỡi thành, hãy kêu la! Hỡi cả đất Phi-li-tin, hết thảy hãy đều tan chảy! Vì có luồng khói từ phương bắc đến, chẳng ai lìa khỏi hàng ngũ mình.',
         32: 'Lấy chi trả lời cho sứ giả của nước nầy? Trả lời rằng: Ðức Giê-hô-va đã lập Si-ôn, và kẻ sầu khổ trong dân Ngài sẽ được ẩn náu trong nó.',
     },

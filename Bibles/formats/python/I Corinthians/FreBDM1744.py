@@ -37,7 +37,7 @@ CHAPTERS = {
     },
     2: {
         1: 'Pour moi donc, mes frères, quand je suis venu vers vous, je n’y suis point venu avec des discours pompeux, remplis de la sagesse humaine, en vous annonçant le témoignage de Dieu.',
-        2: 'Parce que je ne me suis proposé de savoir autre chose parmi vous, que Jésus-Christ, et Jésus\x96Christ crucifié.',
+        2: 'Parce que je ne me suis proposé de savoir autre chose parmi vous, que Jésus-Christ, et Jésus-Christ crucifié.',
         3: 'Et j’ai même été parmi vous dans la faiblesse, dans la crainte, et dans un grand tremblement.',
         4: 'Et ma parole et ma prédication n’a point été en paroles persuasives de la sagesse humaine: mais en évidence d’Esprit et de puissance;',
         5: 'Afin que votre foi ne soit point l’effet de la sagesse des hommes, mais de la puissance de Dieu.',

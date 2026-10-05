@@ -13,15 +13,20 @@
 # deadman itself dies, that file goes stale and a human (or a future
 # watcher) can tell.
 #
-# Optional: DEADMAN_NOTIFY="some-command" in the crontab receives one line per
-# event on argv — wire up push/email when the fleet has a working channel.
+# Every STALE/RECOVERED event is also emailed (same sendmail path and
+# recipient as gift-healthcheck.sh). DEADMAN_NOTIFY="some-command" replaces
+# the email with a command that receives the event line on argv;
+# DEADMAN_NOTIFY=none keeps it log-only.
 #
-# Override for testing: DEADMAN_WATCH, DEADMAN_STATE, DEADMAN_LOG, DEADMAN_BEAT.
+# Override for testing: DEADMAN_WATCH, DEADMAN_STATE, DEADMAN_LOG, DEADMAN_BEAT,
+# DEADMAN_EMAIL, DEADMAN_SENDMAIL.
 
 WATCH="${DEADMAN_WATCH:-gift-health|/home/rnk/gift-health.log|11}"
 STATE="${DEADMAN_STATE:-/home/rnk/.deadman.state}"
 LOG="${DEADMAN_LOG:-/home/rnk/deadman.log}"
 BEAT="${DEADMAN_BEAT:-/home/rnk/.deadman.last-run}"
+EMAIL="${DEADMAN_EMAIL:-bd@rnk-enterprise.us}"
+SENDMAIL="${DEADMAN_SENDMAIL:-sendmail}"
 
 now=$(date +%s)
 touch "$BEAT" 2>/dev/null || true
@@ -32,9 +37,30 @@ state_del() {
     local tmp
     tmp=$(mktemp) && grep -vFx "$1 stale" "$STATE" > "$tmp" 2>/dev/null && mv "$tmp" "$STATE"
 }
+notify_email() {
+    if ! command -v "${SENDMAIL%% *}" >/dev/null 2>&1; then
+        echo "[$(date '+%Y-%m-%d %H:%M:%S')] ERROR: mailer '$SENDMAIL' not found — alert NOT sent" >> "$LOG"
+        return 1
+    fi
+    ${SENDMAIL} -t <<EOF
+From: The Gift <gift@rnkstudios.uk>
+To: ${EMAIL}
+Subject: [deadman] ${1%% — *}
+Content-Type: text/plain; charset=utf-8
+
+${1}
+
+-- 
+deadman on $(hostname)
+EOF
+}
 emit() {
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG"
-    [ -n "${DEADMAN_NOTIFY:-}" ] && "$DEADMAN_NOTIFY" "$1" >/dev/null 2>&1
+    case "${DEADMAN_NOTIFY:-}" in
+        none) ;;
+        "")   notify_email "$1" ;;
+        *)    "$DEADMAN_NOTIFY" "$1" >/dev/null 2>&1 ;;
+    esac
 }
 
 for entry in $WATCH; do

@@ -190,7 +190,7 @@ CHAPTERS = {
         28: 'Vì người nói rằng: Nếu ta chỉ rờ đến áo Ngài mà thôi, thì ta sẽ được lành.',
         29: 'Cùng một lúc ấy, huyết lậu liền cầm lại; người nghe trong mình đã được lành bịnh.',
         30: 'Tức thì Ðức Chúa Jêsus tự biết có sức mạnh đã ra từ mình, bèn xây lại giữa đám đông mà hỏi rằng: Ai đã rờ áo ta?',
-        31: 'Môn đồ thưa rằng: Thầy thấy đám đông lấn ép thầy, thº§y còn hỏi rằng: Ai rṀ\x9d đến ta?',
+        31: 'Môn đồ thưa rằng: Thầy thấy đám đông lấn ép thầy, thầy còn hỏi rằng: Ai rờ đến ta?',
         32: 'Ngài nhìn chung quanh mình để xem người đã làm điều đó.',
         33: 'Người đờn bà biết sự đã xảy đến cho mình, bèn run sợ đến gieo mình dưới chơn Ngài, tỏ hết tình thật.',
         34: 'Ðức Chúa Jêsus phán rằng: Hỡi con gái ta, đức tin con đã cứu con; hãy đi cho bình an và được lành bịnh.',

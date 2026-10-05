@@ -4,7 +4,8 @@
 # Checks https://gift.rnkstudios.uk/healthz (the door a visitor actually uses,
 # so it catches service, tunnel, DNS, and edge failures alike). Emails on the
 # transition into failure, reminds hourly while still down, emails once on
-# recovery. Log: /home/rnk/gift-health.log
+# recovery. Also alerts if deploy/deadman.sh stops running (its heartbeat
+# file goes stale). Log: /home/rnk/gift-health.log
 #
 # Override the target for testing:  GIFT_HEALTH_URL=http://127.0.0.1:9999 ./gift-healthcheck.sh
 
@@ -44,6 +45,29 @@ diagnose() {
     echo "  pm2 tunnel    : $(pm2 pid rnkstudios-web-tunnel 2>/dev/null | grep -q '[0-9]' && echo running || echo 'not running')"
 }
 
+# Cross-watch: deadman.sh watches this script's log; this script watches
+# deadman's heartbeat, so neither can die silently. One email per transition.
+BEAT="${GIFT_DEADMAN_BEAT:-/home/rnk/.deadman.last-run}"
+BEAT_MAX_MIN="${GIFT_DEADMAN_MAX_MIN:-15}"
+BEAT_STATE="${STATE}.deadman"
+if [ -f "$BEAT" ]; then
+    BEAT_AGE=$(( (NOW - $(stat -c %Y "$BEAT")) / 60 ))
+else
+    BEAT_AGE=999999
+fi
+if [ "$BEAT_AGE" -gt "$BEAT_MAX_MIN" ]; then
+    if [ ! -f "$BEAT_STATE" ]; then
+        touch "$BEAT_STATE"
+        echo "[$STAMP] deadman heartbeat stale (${BEAT_AGE} min)" >> "$LOG"
+        send_alert "[WARN] gift deadman switch not running" \
+"deploy/deadman.sh has not run for ${BEAT_AGE} min ($BEAT).
+Check rnk's crontab on $(hostname)."
+    fi
+elif [ -f "$BEAT_STATE" ]; then
+    rm -f "$BEAT_STATE"
+    echo "[$STAMP] deadman heartbeat fresh again" >> "$LOG"
+fi
+
 if curl -fsS -m 15 "$URL" 2>/dev/null | grep -q '"ok"'; then
     if [ -f "$STATE" ]; then
         DOWN_SINCE=$(cat "$STATE" 2>/dev/null || echo "$NOW")
@@ -64,8 +88,9 @@ if [ -f "$STATE" ]; then
     DOWN_SINCE=$(cat "$STATE" 2>/dev/null || echo "$NOW")
     MINS=$(( (NOW - DOWN_SINCE) / 60 ))
     echo "[$STAMP] still down (${MINS} min)" >> "$LOG"
-    # re-alert on the hour mark (50-55..59+ window so one cron tick per hour fires)
-    if [ $(( MINS % 60 )) -ge 55 ] || [ $(( MINS % 60 )) -le 4 ]; then
+    # re-alert once per hour: the window is exactly one 5-minute cron tick
+    # wide ([60k, 60k+5) minutes), so exactly one tick per hour lands in it
+    if [ "$MINS" -ge 60 ] && [ $(( MINS % 60 )) -lt 5 ]; then
         send_alert "[DOWN] gift.rnkstudios.uk still down (${MINS} min)" \
 "The Gift is still not answering /healthz (down ~${MINS} min).
 $(diagnose)"

@@ -448,6 +448,6 @@ CHAPTERS = {
         18: "Unë i deklaroj kujtdo që dëgjon fjalët e profecisë së këtij libri, se nëse ndokush do t'i shtojë këtyre gjërave, Perëndia do të dërgojë mbi të plagët e përshkruara në këtë libër.",
         19: "Dhe nëse dikush heq nga fjalët e librit të kësaj profecie, Perëndia do t'i heqë pjesën e tij nga libri i jetës nga qyteti i shenjtë, dhe nga gjërat që janë përshkruar në këtë libër.",
         20: "Ai që dëshmon për këto gjëra, thotë: ''Po, unë vij shpejt. Amen''. Po, eja, Zoti Jezus.",
-        21: 'Hiri i Zotit Jezu Krisht qoftë me ju të gjithë. Amen. #THE UNBOUND BIBLE (www.unboundbible.org) #name Chinese: NCV (Simplified) #filetype Unmapped-BCV #copyright #abbreviation #language zht #note #columns orig_book_index orig_chapter orig_verse text',
+        21: 'Hiri i Zotit Jezu Krisht qoftë me ju të gjithë. Amen.',
     },
 }

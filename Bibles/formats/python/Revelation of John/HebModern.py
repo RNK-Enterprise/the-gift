@@ -448,6 +448,6 @@ CHAPTERS = {
         18: 'מעיד אני בכל השמע דברי נבואת הספר הזה אם יוסיף איש עליהם יוסיף עליו האלהים את המכות הכתובות בספר הזה׃',
         19: 'ואם יגרע איש מדברי ספר הנבואה הזאת יגרע האלהים את לחקו מעץ החיים ומעיר הקדש הכתובים בספר הזה׃',
         20: 'המעיד את אלה אמר אמנם כן אני בא מהר אמן באה נא האדון ישוע׃',
-        21: 'חסד אדנינו ישוע המשיח עם כלכם כל הקדושים אמן׃ #THE UNBOUND BIBLE (www.unboundbible.org) #name Italian: Giovanni Diodati Bible (1649) #filetype Unmapped-BCV #copyright #abbreviation #language itn #note #columns orig_book_index orig_chapter orig_verse text',
+        21: 'חסד אדנינו ישוע המשיח עם כלכם כל הקדושים אמן׃',
     },
 }

@@ -222,7 +222,7 @@ CHAPTERS = {
         29: 'huống chi kẻ giày đạp Con Ðức Chúa Trời, coi huyết của giao ước, tức là huyết mà mình nhờ nên thánh, là ô uế, lại khinh lờn Ðức Thánh Linh ban ơn, thì anh em há chẳng tưởng rằng người ấy đáng bị hình rất nghiêm đoán phạt hay sao?',
         30: 'Vì chúng ta biết Ðấng đã phán rằng: Sự trả thù thuộc về ta; ta sẽ báo ứng, ấy là lời Chúa phán. Lại rằng: Chúa sẽ xét đoán dân mình.',
         31: 'Sa vào tay Ðức Chúa Trời hằng sống là sự đáng kinh khiếp thay!',
-        32: 'Hãy nhớ lại những lúc ban đầu đó, anh em đã được soi sáng rồi, bèn chịu cơn chiến trận lớn về những sự đau đṀ\x9bn:',
+        32: 'Hãy nhớ lại những lúc ban đầu đó, anh em đã được soi sáng rồi, bèn chịu cơn chiến trận lớn về những sự đau đớn:',
         33: 'phần thì chịu sỉ nhục, gặp gian nan, như làm trò cho thiên hạ xem, phần thì chia khổ với những kẻ bị đối đãi đồng một cách.',
         34: 'Vì anh em đã thương xót kẻ bị tù, và vui lòng chịu của cải mình bị cướp, bởi biết mình có của cải quí hơn hằng còn luôn.',
         35: 'Vậy chớ bỏ lòng dạn dĩ mình, vốn có một phần thưởng lớn đã để dành cho.',

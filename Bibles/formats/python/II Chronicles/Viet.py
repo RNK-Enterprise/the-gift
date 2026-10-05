@@ -177,7 +177,7 @@ CHAPTERS = {
         6: 'lại xây thành Ba-lát và các thành làm kho tàng của Sa-lô-môn, các thành để chứa xe, và các thành cho lính kỵ người ở; phàm điều gì Sa-lô-môn ước ao xây cất, hoặc tại Giê-ru-sa-lem, trên Li-ban, hay là trong khắp xứ phục dưới quyền người, thì đều xây cất cả.',
         7: 'Hết thảy những người còn sống sót lại trong dân Hê-tít, dân A-mô-rít, dân Phê-rê-sít, dân Hê-vít, và dân Giê-bu-sít, không thuộc về Y-sơ-ra-ên,',
         8: 'tức là những con cháu chúng nó hãy còn lại trong xứ, mà dân Y-sơ-ra-ên không diệt hết, thì trong chúng nó Sa-lô-môn bắt kẻ làm xâu cho đến ngày nay.',
-        9: 'Nhưng về dân Y-sơ-ra-ên, Sa-lô-môn không bắt ai làm xâu hết, vì họ làm quân lính, quan tướng, quan cai xe, và lính kỵ c»§a ngưṀ\x9di.',
+        9: 'Nhưng về dân Y-sơ-ra-ên, Sa-lô-môn không bắt ai làm xâu hết, vì họ làm quân lính, quan tướng, quan cai xe, và lính kỵ của người.',
         10: 'Còn về quan trưởng của Sa-lô-môn đặt lên để quản đốc dân sự làm công việc, số là hai trăm năm mươi người.',
         11: 'Sa-lô-môn sai rước công chúa Pha-ra-ôn ở thành Ða-vít lên cung mà người đã cất cho nàng; vì người nói rằng: Vợ ta chẳng nên ở trong cung Ða-vít, vua Y-sơ-ra-ên, vì nơi nào hòm của Ðức Giê-hô-va đến, thì đã nên thánh rồi.',
         12: 'Bấy giờ, Sa-lô-môn dâng của lễ thiêu cho Ðức Giê-hô-va tại trên bàn thờ của Giê-hô-va mà người đã xây trước hiên cửa;',

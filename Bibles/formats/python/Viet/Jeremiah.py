@@ -624,7 +624,7 @@ CHAPTERS = {
         37: 'Vậy ngươi khá hỏi kẻ tiên tri rằng: Ðức Giê-hô-va đã trả lời cho ngươi làm sao? Hay là: Ðức Giê-hô-va đã phán thể nào?',
         38: 'Nhưng nếu các ngươi nói rằng: Gánh nặng của Ðức Giê-hô-va, bởi cớ đó, Ðức Giê-hô-va phán như vầy: Vì các ngươi nói lời nầy: Gánh nặng của Ðức Giê-hô-va, và ta đã sai đến cùng các ngươi đặng bảo các ngươi rằng: Chớ còn nói rằng: Gánh nặng của Ðức Giê-hô-va,',
         39: 'nhơn đó, nầy, ta sẽ quên hẳn các ngươi; ta sẽ bỏ các ngươi, và thành ta đã ban cho các ngươi và tổ phụ các ngươi, xa khỏi trước mặt ta.',
-        40: 'Ta sẽ khiến các ngươi chịu nhơ nhuốc đời đời, hổ thẹn vô cùng, không bao gi»\x9d quên được.',
+        40: 'Ta sẽ khiến các ngươi chịu nhơ nhuốc đời đời, hổ thẹn vô cùng, không bao giờ quên được.',
     },
     24: {
         1: 'Ðức Giê-hô-va tỏ cho tôi, nầy, có hai giỏ trái vả để trước đền thờ Ðức Giê-hô-va. Ấy là sau khi Nê-bu-cát-nết-sa, vua Ba-by-lôn, đã bắt Giê-cô-nia, con trai Giê-hô-gia-kim, vua Giu-đa, cùng các quan trưởng Giu-đa, với các thợ nghề và thợ rèn từ thành Giê-ru-sa-lem đem về nước Ba-by-lôn làm phu tù.',

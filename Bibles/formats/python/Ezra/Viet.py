@@ -237,7 +237,7 @@ CHAPTERS = {
         33: 'Ngày thứ tư, chúng ta cân lại bạc, vàng, và những khí dụng trong đền thờ Ðức Chúa Trời, rồi giao cho Mê-rê-mốt, con trai U-ri, thầy tế lễ (với người có Ê-lê-a-sa, con trai của Phi-nê-a, Giô-xa-báp, con trai Giê-sua, và Nô-a-đia, con trai Bin-nui, người Lê-vi),',
         34: 'cứ theo số và cân; số cân nặng đều biên chép trong một kỳ ấy.',
         35: 'Những người đã bị bắt làm phu tù được trở về, dâng của lễ thiêu cho Ðức Chúa Trời của Y-sơ-ra-ên bằng mười hai con bò đực vì cả Y-sơ-ra-ên, chín mươi sáu con chiên đực, bảy mươi bảy con chiên con, và mười hai con dê đực để làm của lễ chuộc tội: cả thảy đều dâng lên làm của lễ thiêu cho Ðức Giê-hô-va.',
-        36: 'Chúng giao chiếu ch»\x89 của vua cho các quan trấn, và cho các quan cai của vua ở phía bên nầy sông họ bèn giúp đỡ dân sự và việc đền thờ của Ðức Chúa Trời.',
+        36: 'Chúng giao chiếu chỉ của vua cho các quan trấn, và cho các quan cai của vua ở phía bên nầy sông họ bèn giúp đỡ dân sự và việc đền thờ của Ðức Chúa Trời.',
     },
     9: {
         1: 'Sau các việc đó, các quan trưởng đến gần nói với ta rằng: Dân Y-sơ-ra-ên, những thầy tế lễ, và người Lê-vi chẳng có phân rẽ với các dân tộc của xứ nầy; họ bắt chước theo sự gớm ghiếc của dân Ca-na-an, dân Hê-vít, dân Phê-rê-sít, dân Giê-bu-sít, dân Am-môn, dân Mô-áp, dân Ê-díp-tô, và dân A-mô-rít.',

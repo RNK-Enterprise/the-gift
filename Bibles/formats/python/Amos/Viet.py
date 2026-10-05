@@ -71,7 +71,7 @@ CHAPTERS = {
     },
     5: {
         1: 'Hỡi nhà Y-sơ-ra-ên, hãy nghe lời nầy, là bài ca thương mà ta sẽ làm về các ngĀ°ơi!',
-        2: 'Gái đṀ\x93ng trinh của Y-sơ-ra-ên đã ngã xuống, sẽ không dậy nữa; nó đã bị ném bỏ trên đất nó, mà không ai đỡ dậy.',
+        2: 'Gái đồng trinh của Y-sơ-ra-ên đã ngã xuống, sẽ không dậy nữa; nó đã bị ném bỏ trên đất nó, mà không ai đỡ dậy.',
         3: 'Vì Chúa Giê-hô-va phán như vầy: Thành nào ra một ngàn quân, chỉ còn có một trăm; thành nào dấy lên một trăm người, chỉ còn có mười người trong nhà Y-sơ-ra-ên sót lại.',
         4: 'Ðức Giê-hô-va phán cùng nhà Y-sơ-ra-ên như vầy: Hãy tìm kiếm ta, thì các ngươi sẽ sống!',
         5: 'Chớ tìm kiếm Bê-tên, chớ vào trong Ghinh-ganh, đừng đi đến Bê -e-Sê-ba. Vì Ghinh-ganh sẽ bị đày, Bê-tên sẽ trở nên một nơi đổ nát.',

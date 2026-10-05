@@ -338,7 +338,7 @@ CHAPTERS = {
         5: 'Chẳng có mắt nào thương mầy, đặng làm một việc trong những việc đó cho mầy vì lòng thương xót mầy; song mầy đã bị quăng giữa đồng trống trong ngày mầy sanh ra, vì người ta gớm mầy.',
         6: 'Khi ta qua gần mầy, thấy mầy tắm trong máu mình, ta phán cùng mầy rằng: Dầu ở giữa máu mầy, hãy sống! Thật, ta phán cùng mầy rằng: Dầu ở giữa máu mầy, hãy sống!',
         7: 'Ta đã làm cho mầy thêm nhiều ra, như vật đồng ruộng mọc lên. Mầy đã nẩy nở, lớn lên, và trở nên đẹp đẽ lắm. Vú mầy dậy lên, tóc mầy dài ra, nhưng hãi còn ở lỗ và trần truồng.',
-        8: 'Khi ta qua gần mầy, và nhìn mầy, nầy, tuṀ\x95i mầy nầy, mầy \x80\x91ã đến tuổi yêu mến. Ta lấy áo ngoài ta trùm trên mầy, che sự trần truồng mầy. Phải, ta thề cùng mầy và kết giao ước với mầy, thì mầy trở nên của ta, Chúa Giê-hô-va phán vậy.',
+        8: 'Khi ta qua gần mầy, và nhìn mầy, nầy, tuổi mầy nầy, mầy đã đến tuổi yêu mến. Ta lấy áo ngoài ta trùm trên mầy, che sự trần truồng mầy. Phải, ta thề cùng mầy và kết giao ước với mầy, thì mầy trở nên của ta, Chúa Giê-hô-va phán vậy.',
         9: 'Ta rửa mầy trong nước, làm cho sạch máu vấy mình mầy, và xức dầu cho.',
         10: 'Ta mặc áo thêu cho mầy, cho mầy mang giày sắc lam, thắt lưng mầy bằng vải gai mịn, đắp cho mầy bằng hàng lụa.',
         11: 'Ta lấy đồ trang sức giồi cho mầy, xỏ vòng vào tay, mang kiềng vào cỡ,',

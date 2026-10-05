@@ -585,6 +585,6 @@ CHAPTERS = {
         36: 'Svi jednodušno zaključiše da se taj dan nipošto ne zaboravi, nego da se slavi trinaestog dana dvanaestog mjeseca, koji se aramejskim jezikom zove Adar, uoči dana Mordokajeva.',
         37: 'Budući da je s Nikanorom dokončano te su Hebreji od tog vremena zavladali gradom, ja ću ovim završiti svoju povijest.',
         38: 'Ako sam je dobro i vješto sastavio, ispunila mi se želja. Ako li slabo i osrednje, učinio sam što sam mogao.',
-        39: 'Jer kao što je štetno piti samo vino ili samu vodu, dok je vino pomiješano s vodom tečnije i ugodnije, tako se i pravilno raspoređen prikaz sviđa ušima onih koji knjigu slušaju. Time završavam. #THE UNBOUND BIBLE (www.unboundbible.org) #name Ukrainian: NT (P.Kulish, 1871) #filetype Unmapped-BCVS #copyright #abbreviation #language ukr #note #columns orig_book_index orig_chapter orig_verse orig_subverse order_by text',
+        39: 'Jer kao što je štetno piti samo vino ili samu vodu, dok je vino pomiješano s vodom tečnije i ugodnije, tako se i pravilno raspoređen prikaz sviđa ušima onih koji knjigu slušaju. Time završavam.',
     },
 }

@@ -47,7 +47,7 @@ CHAPTERS = {
         19: 'chúng nó hứa sự tự do cho người, mà chính mình thì làm tôi mọi sự hư nát; vì có sự chi đã thắng hơn người, thì người là tôi mọi sự đó.',
         20: 'Vả, chúng nó bởi sự nhận biết Chúa và Cứu Chúa chúng ta là Ðức Chúa Jêsus Christ, mà đã thoát khỏi sự ô uế của thế gian, rồi lại mắc phải và suy phục những sự đó, thì số phận sau cùng của chúng nó trở xấu hơn lúc đầu.',
         21: 'chúng nó đã biết đường công bình, rồi lại lui đi về lời răn thánh đã truyền cho mình, thế thì thà rằng không biết là hơn.',
-        22: 'Ðã xảy đến cho chúng nó như lời t»¥c ngữ rằng: Chó liếm lại đồ nó đã mửa, heo đã rửa sách rồi, lại liên lạc trong vũng bùn.',
+        22: 'Ðã xảy đến cho chúng nó như lời tục ngữ rằng: Chó liếm lại đồ nó đã mửa, heo đã rửa sách rồi, lại liên lạc trong vũng bùn.',
     },
     3: {
         1: 'Hỡi kẻ rất yêu dấu, nầy là thơ thứ hai tôi viết cho anh em. trong thơ nầy và thơ kia, tôi tìm cách làm cho nhớ lại để giục lòng lành trong anh em,',

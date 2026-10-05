@@ -787,7 +787,7 @@ CHAPTERS = {
         3: 'Há chẳng phải sự tai họa cho kẻ gian ác, Và sự hư hại cho kẻ làm dữ sao?',
         4: 'Chớ thì Ðức Chúa Trời chẳng thấy đường lối tôi, Và đếm các bước tôi sao?',
         5: 'Nếu tôi có ăn ở cách dối trá, Và chơn tôi vội vàng theo chước gian giảo,',
-        6: 'NguyṀ\x87n Ðức Chúa Trời cân tôi trên cân thăng bằng, Thì Ngài sẽ nhìn biết sự thanh liêm của tôi.',
+        6: 'Nguyện Ðức Chúa Trời cân tôi trên cân thăng bằng, Thì Ngài sẽ nhìn biết sự thanh liêm của tôi.',
         7: 'Nếu chơn tôi trở bước bỏ con đường chánh đáng, Và lòng tôi đi theo con mắt tôi, Nếu có sự ô uế chi dính vào tay tôi,',
         8: 'Nguyện tôi gieo, và có kẻ khác gặt hái, Nguyện thổ sản tôi bị nhổ đi!',
         9: 'Nếu lòng tôi bị người nữ quyến dụ, Nếu tôi rình rập ở nơi cửa của lân cận tôi,',

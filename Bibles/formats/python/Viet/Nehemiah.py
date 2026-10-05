@@ -294,7 +294,7 @@ CHAPTERS = {
         18: 'Hô-đia, Ha-sum, Bết-sai,',
         19: 'Ha-ríp, A-na-tốt, Ni-bai,',
         20: 'Mác-bi-ách, Mê-su-lam, Hê-xia,',
-        21: 'Mê-sê-xa-bê-ên, Xa-\x80\x91ốc, Gia-đua,',
+        21: 'Mê-sê-xa-bê-ên, Xa-đốc, Gia-đua,',
         22: 'Phê-la-tia, Ha-nan, A-na-gia,',
         23: 'Ô-sê, Ha-na-nia, Ha-súp,',
         24: 'Ha-lô-hết, Bi-la, Sô-béc,',

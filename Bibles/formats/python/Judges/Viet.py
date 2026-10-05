@@ -594,7 +594,7 @@ CHAPTERS = {
         6: 'Ðoạn, tôi nắm lấy thây vợ bé tôi, chặt nó ra từng đoạn, gởi đi khắp địa phận của sản nghiệp Y-sơ-ra-ên; vì chúng nó có phạm một tội trọng, một sự sỉ nhục trong Y-sơ-ra-ên.',
         7: 'Nầy, hết thảy dân Y-sơ-ra-ên có mặt đây; anh em hãy bàn luận nhau và liệu định phải làm thế nào đây.',
         8: 'Cả dân sự đứng dậy như một người mà rằng: Chẳng ai trong chúng ta sẽ trở lại trại mình; không ai rút về nhà mình.',
-        9: 'Bây giờ, nầy là điều chúng ta phải xử cho Ghi-bê-a: Chúng ta sẽ đi lên đánh thành đó theo thứ tự của thăm nh»©t định.',
+        9: 'Bây giờ, nầy là điều chúng ta phải xử cho Ghi-bê-a: Chúng ta sẽ đi lên đánh thành đó theo thứ tự của thăm nhứt định.',
         10: 'Trong các chi phái Y-sơ-ra-ên, chúng ta phải lấy mười người trong một trăm, trăm người trong một ngàn, ngàn người trong một muôn. Chúng ta sẽ đi tìm lương thực cho dân sự; rồi khi trở về, người ta phải xử Ghi-bê-a của Bên-gia-min, tùy theo sự sỉ nhục mà thành ấy đã phạm nơi Y-sơ-ra-ên.',
         11: 'Ấy vậy, hết thảy người Y-sơ-ra-ên nhóm nhau hãm đánh thành đó, hiệp lại như chỉ một người.',
         12: 'Các chi phái Y-sơ-ra-ên sai sứ giả đến cùng chi phái Bên-gia-min mà nói rằng: Tội ác đã phạm tại trong các ngươi là gì?',

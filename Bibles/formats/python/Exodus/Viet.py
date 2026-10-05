@@ -373,7 +373,7 @@ CHAPTERS = {
         9: 'Ðiều đó sẽ làm một dấu hiệu nơi tay ngươi, làm một kỷ niệm ghi nơi trán ở giữa cặp mắt ngươi, hầu cho luật pháp của Ðức Giê-hô-va ở nơi miệng ngươi, vì Ðức Giê-hô-va đã dùng tay quyền năng rút ngươi ra khỏi xứ Ê-díp-tô.',
         10: 'Hằng năm, đến kỳ, ngươi phải giữ lễ nầy.',
         11: 'Khi Ðức Giê-hô-va đã đưa ngươi vào bờ cõi xứ Ca-na-an, như Ngài đã thề cùng ngươi, và tổ phụ ngươi, khi Ngài đã ban xứ đó cho rồi,',
-        12: 'thì hãy đem dâng cho Ðức Giê-hô-va những con trưởng nam cùng cả con đầu lòng đực của súc vật ngươi, vì chúng nó đều sẽ thuộc về ÐṀ©c Giê-hô-va.',
+        12: 'thì hãy đem dâng cho Ðức Giê-hô-va những con trưởng nam cùng cả con đầu lòng đực của súc vật ngươi, vì chúng nó đều sẽ thuộc về Ðức Giê-hô-va.',
         13: 'Nhưng mỗi con lừa đầu lòng, ngươi phải bắt chiên con hay là dê con mà chuộc; bằng không, ngươi hãy vặn cổ nó. Ngươi cũng chuộc mọi trưởng nam trong vòng con trai ngươi.',
         14: 'Vả, một mai con trai ngươi hỏi rằng: Ðiều đó có ý nghĩa chi? thì hãy đáp rằng: Ấy vì cớ Ðức Giê-hô-va đã dùng tay quyền năng rút chúng ta ra khỏi xứ Ê-díp-tô, tức là nhà nô lệ;',
         15: 'và khi Pha-ra-ôn cứng lòng không tha chúng ta đi, Ngài bèn giết hết các con đầu lòng trong xứ đó, từ con trưởng nam người ta cho đến con đầu lòng súc vật. Vì cớ đó, ta dâng tế lễ cho Ðức Giê-hô-va mọi con đực sanh đầu lòng, và ta chuộc con trưởng nam trong vòng con trai ta.',

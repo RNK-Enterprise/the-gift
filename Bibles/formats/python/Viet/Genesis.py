@@ -450,7 +450,7 @@ CHAPTERS = {
         15: 'Ðức Chúa Trời phán cùng Áp-ra-ham rằng: còn Sa-rai, vợ ngươi, chớ gọi là Sa-rai nữa; nhưng Sa-ra là tên người đó.',
         16: 'Ta sẽ ban phước cho nàng, lại do nơi nàng ta sẽ cho ngươi một con trai, Ta sẽ ban phước cho nàng, nàng sẽ làm mẹ các dân tộc; những vua của các dân tộc sẽ do nơi nàng mà ra.',
         17: 'Áp-ra-ham bèn sấp mình xuống đất, cười và nói thầm rằng: Hồ dễ người đã trăm tuổi rồi, mà sanh con được chăng? Còn Sa-ra, tuổi đã chín mươi, sẽ sanh sản được sao?',
-        18: 'Áp-ra-ham thưa cùng Ðức Chúa Tr»»\x9di rằng: Chớ chi Ích-ma-ên vẫn được sống trước mặt Ngài!',
+        18: 'Áp-ra-ham thưa cùng Ðức Chúa Trời rằng: Chớ chi Ích-ma-ên vẫn được sống trước mặt Ngài!',
         19: 'Ðức Chúa Trời bèn phán rằng: Thật vậy, Sa-ra vợ ngươi, sẽ sanh một con trai, rồi ngươi đặt tên là Y-sác. Ta sẽ lập giao ước cùng nó, để làm giao ước đời đời cho dòng dõi của nó.',
         20: 'Ta cũng nhậm lời ngươi xin cho Ích-ma-ên. Nầy, ta ban phước cho người, sẽ làm cho người sanh sản và thêm nhiều quá-bội; người sẽ là tổ phụ của mười hai vị công-hầu, và ta làm cho người thành một dân lớn.',
         21: 'Nhưng ta sẽ lập giao ước ta cùng Y-sác, độ khoảng nầy năm tới Sa-ra phải sanh cho ngươi.',
