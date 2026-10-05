@@ -19,7 +19,7 @@ function _parsePy(pyPath) {
   };
 }
 
-const TOKEN_RE = /[a-z0-9']+/g;
+const TOKEN_RE = /[\p{L}\p{M}\p{N}'’]+/gu;  // any script, incl. combining marks
 
 let _data = null;
 function _load() {
