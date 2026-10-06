@@ -2,6 +2,10 @@
 
 Private (not in the served library). Lives under `~/gift-model/` and `~/bible-train/`.
 
+## Status (2026-10-06)
+
+Fine-tuned GGUF live (`bible-1.7b-q4_k_m.gguf`). Eval gates met: recall 86%, integrity 100%, refusal 100% (`model/eval/finetuned-1.7b.json`).
+
 ## Live processes (pm2)
 
 - `gift-bible-llama` — llama.cpp server on `127.0.0.1:8081` (CPU, `-ngl 0`)
