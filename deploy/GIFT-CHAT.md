@@ -62,7 +62,20 @@ starts `ld-lore-llm` again.
 
 ## Public URL
 
-Tunnel ingress for `gift-chat.rnkstudios.uk` → `:4000` is in
-`~/.cloudflared/rnkstudios-web.yml`. Add the Cloudflare public hostname / DNS
-in the **rnkstudios.uk** zone. Until then use `https://alpha.rnk-enterprise.us/`
-and select **The Gift — Bible Study**.
+**Intended door:** `https://the-gift.rnkstudios.uk/` → Domain UI on `:4000`
+(pick **The Gift — Bible Study**).
+
+Tunnel ingress is already in `~/.cloudflared/rnkstudios-web.yml` on atlas.
+DNS is **not** live yet: atlas `cloudflared` is logged into a different CF
+account and creates `*.rnk-enterprise.us` names instead of `rnkstudios.uk`.
+
+Add this in Cloudflare for zone **rnkstudios.uk** (same place `gift` was added):
+
+- Type: CNAME (proxied / orange cloud)
+- Name: `the-gift`
+- Target: `40fe8256-ae3d-43c0-98d8-5dbf9a70a083.cfargotunnel.com`
+
+Or Zero Trust → Networks → Tunnels → **rnkstudios-web** → Public Hostname:
+`the-gift.rnkstudios.uk` → `http://localhost:4000`.
+
+Library stays at `https://gift.rnkstudios.uk/` (`:8770`).
