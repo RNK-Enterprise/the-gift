@@ -4,7 +4,7 @@ Private (not in the served library). Lives under `~/gift-model/` and `~/bible-tr
 
 ## Status (2026-10-06)
 
-Fine-tuned GGUF live (`bible-1.7b-q4_k_m.gguf`). Eval gates met: recall 86%, integrity 100%, refusal 100% (`model/eval/finetuned-1.7b.json`).
+Fine-tuned GGUF live (`bible-1.7b-q4_k_m.gguf`). Eval **100/100/100** (recall / integrity / refusal) via exact-quote + refuse paths (`model/eval/finetuned-1.7b.json`).
 
 ## Live processes (pm2)
 
