@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" width="640" height="320"><defs>
+    <radialGradient id="sun" cx=".5" cy="1" r=".6"><stop offset="0" stop-color="#f5c56b" stop-opacity=".95"/><stop offset=".35" stop-color="#f5c56b" stop-opacity=".35"/><stop offset="1" stop-color="#f5c56b" stop-opacity="0"/></radialGradient>
+    <linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1d3f9e"/><stop offset="1" stop-color="#e8b552" stop-opacity=".25"/></linearGradient>
+    <linearGradient id="h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0e2a6e"/><stop offset="1" stop-color="#3a63d8" stop-opacity=".2"/></linearGradient>
+  </defs>
+  <rect width="640" height="320" fill="url(#sun)"/>
+  <g stroke="#f5c56b" stroke-opacity=".35" stroke-width="3" stroke-linecap="round">
+    <path d="M320 200V70M320 200 230 92M320 200 410 92M320 200 168 134M320 200 472 134M320 200 132 184M320 200 508 184"/>
+  </g>
+  <circle cx="320" cy="222" r="58" fill="#f5c56b"/>
+  <path d="M0 236c90-40 170-46 250-20s170 34 250 4 100-30 140-26V320H0z" fill="url(#h2)"/>
+  <path d="M0 262c110-34 210-28 300 0s210 30 340-8V320H0z" fill="url(#h1)"/></svg>

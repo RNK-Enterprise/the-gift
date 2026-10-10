@@ -3,6 +3,7 @@
 ## Commentaries and Reference/
 
 20 classic, mostly-19th-century public-domain Bible commentaries and reference works,
+plus one daily devotional,
 downloaded directly from the [CrossWire SWORD Project](https://www.crosswire.org/sword/)
 module archive — the same source library used by free Bible-study apps like AndBible
 (Android), Xiphos and BibleTime (Linux/Windows/Mac).
@@ -31,6 +32,7 @@ module archive — the same source library used by free Bible-study apps like An
 | `isbe` | International Standard Bible Encyclopedia | Public Domain |
 | `strongsgreek` | Strong's Greek Dictionary (from the Exhaustive Concordance) | Public Domain |
 | `strongshebrew` | Strong's Hebrew Dictionary (from the Exhaustive Concordance) | Public Domain |
+| `sme` | C. H. Spurgeon's *Morning and Evening: Daily Readings* (1865), a reading for every morning and evening of the year. The app's **Today** page shows it | Public Domain |
 
 Every module's exact license text is in its own `mods.d/<name>.conf` file
 (`DistributionLicense=` / `About=` fields) — that's the authoritative source, the table
@@ -38,6 +40,15 @@ above just summarizes it. **`rwp` is the one exception to "public domain"** in t
 keep it if free-for-personal-study is fine for your purposes, delete `mods.d/rwp.conf`
 and `modules/comments/.../rwp` if you want a strictly public-domain-only collection.
 The repository-root `LICENSE` covers the site's own tooling, not these texts.
+
+### Reading them in The Gift app
+
+The app reads these modules directly: the 12 commentaries (and TSK
+cross-references) open beside any verse in the Bible tab, the dictionaries
+and Strong's answer look-ups, and `sme` is the Today page's devotional
+(`gift_study.py`, `gift_library.py`). Matthew Henry (Concise) and TSK are
+free; the rest are part of Premium. `rwp` is hidden in the Google Play app
+because of its non-commercial licence.
 
 ### How to actually read these
 

@@ -44,6 +44,8 @@ class GiftServerTestCase(unittest.TestCase):
         # a symlink inside the library that points at a hidden tree
         (root / "Bibles" / "sneaky").symlink_to(root / "model", target_is_directory=True)
         (root / "Bibles" / "odd #1?%.txt").write_text("odd name\n")
+        (root / "app" / "icons").mkdir(parents=True)
+        (root / "app" / "icons" / "favicon-32.png").write_bytes(b"\x89PNG\r\n\x1a\nfixture")
 
         cls._orig_root = gift.ROOT
         gift.ROOT = root
@@ -190,8 +192,8 @@ class GiftServerTestCase(unittest.TestCase):
     def test_favicon_served(self):
         resp, body = self.request("GET", "/favicon.ico")
         self.assertEqual(resp.status, 200)
-        self.assertTrue(resp.getheader("Content-Type", "").startswith("image/svg+xml"))
-        self.assertIn(b"<svg", body)
+        self.assertEqual(resp.getheader("Content-Type"), "image/png")
+        self.assertTrue(body.startswith(b"\x89PNG"))
 
     def test_landing_page_has_favicon_link(self):
         resp, body = self.request("GET", "/")

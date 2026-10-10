@@ -1,13 +1,17 @@
 # Hosting The Gift on atlas (192.168.1.202)
 
-The Gift is a **static library** — no build step, no packages, no database.
+The Gift is a **library plus an app**: no build step and no packages.
 One stdlib-only Python process serves everything: a landing page with real
-library counts, browsable listings, and the files themselves. "atlas" and
+library counts, browsable listings, the files themselves, and the app at
+`/app/` with its JSON API under `/api/`. The app's accounts and study
+groups, uploads and plans are the only state, in `/var/lib/the-gift` (§7). "atlas" and
 "192.168.1.202" are the same box throughout these docs: the service, the
 Cloudflare tunnel connector, and the monitoring cron jobs all run there.
 
-The server never exposes `.git`/`.claude`/`.freebuff`, the private `model/`
-folder, `deploy/`, or anything outside the library root (symlinks included).
+The server never exposes `.git`/`.claude`/`.freebuff`/`.data`, the private
+`model/` folder, `deploy/`, or anything outside the library root (symlinks
+included). It listens on 127.0.0.1 only; the Cloudflare tunnel is the
+one way in (§3, §8).
 
 Everything installed on the box lives in `deploy/` as a real file, so the box
 can be rebuilt from the repo and nothing drifts silently:
@@ -42,19 +46,29 @@ curl -s http://127.0.0.1:8770/ | grep -o '<h1>[^<]*</h1>'   # → <h1>The Gift</
 ```
 
 After editing `deploy/the-gift.service`, repeat the `cp` and `daemon-reload`
-steps. Logs go to the journal (`journalctl -u the-gift`): errors always,
+steps, then `sudo systemctl restart the-gift`. Logs go to the journal (`journalctl -u the-gift`): errors always,
 a summary line whenever requests are refused with 503, and per-request
 lines only if `GIFT_ACCESS_LOG=1` is set in the unit.
 
-## 3. Verify from another machine
+## 3. Only one door: zero trust
+
+The service listens on **127.0.0.1 only** (`GIFT_HOST=127.0.0.1` in the
+unit). The single way in is the Cloudflare tunnel (§5), whose connector
+runs on this box: every visitor arrives over TLS, and nothing on the LAN
+is trusted or even reachable. (Before v1.3 the LAN door
+`http://192.168.1.202:8770/` was open; it is now closed on purpose. For a
+temporary LAN door, set `GIFT_HOST=0.0.0.0`; but sessions on plain http
+are a risk, so don't leave it that way.)
+
+Check on the box:
 
 ```bash
-curl -s http://192.168.1.202:8770/healthz               # → {"ok": true}
-curl -sI http://192.168.1.202:8770/Bibles/formats/text/AKJV.txt | head -3
-# browser: http://192.168.1.202:8770/ — landing page, browse into any folder
+curl -s http://127.0.0.1:8770/healthz               # → {"ok": true}
+ss -ltnp | grep 8770                                # → 127.0.0.1:8770 only
 ```
 
-If the box has a firewall, open 8770 (e.g. `sudo ufw allow 8770`).
+If `~/.cloudflared/rnkstudios-web.yml` points at `http://localhost:8770`,
+prefer `http://127.0.0.1:8770` so the connector never tries IPv6 `::1`.
 
 ## 4. Redeploy
 
@@ -89,11 +103,11 @@ curl -s https://gift.rnkstudios.uk/healthz          # → {"ok": true}
 curl -sI https://gift.rnkstudios.uk/ | head -3      # HTTP/2 200, server: cloudflare
 ```
 
-Both doors serve the same library: the LAN address for local use, the
-public name for the world. Bulk/programmatic access (the per-book
-files, the 1.2 GB python tree) should `git clone` the repo. The HTTP
-server streams files in chunks but has no range/resume support, by
-design.
+The public name is the only door (see §3). Bulk/programmatic access (the
+per-book files, the 1.2 GB python tree) should `git clone` the repo. The
+HTTP server streams files in chunks and has no range/resume support for
+library files, by design; audio (hymns, songs) is the exception, because
+players seek with ranges.
 
 ## 6. Monitoring
 
@@ -138,7 +152,115 @@ identically by both copies. If the old copy does not touch
 correctly reporting that the repo's deadman isn't the one running.
 
 
-## 7. Bible chat (Domain + grounded adapter)
+## 7. The app's data
+
+The unit sets `StateDirectory=the-gift`, so systemd creates
+`/var/lib/the-gift/` owned by `www-data`, and `GIFT_DATA_DIR` points the
+server there. It is the service's only writable path. Inside:
+
+- `community.sqlite3` (WAL mode, so also `-wal`/`-shm`): accounts
+  (username, name, scrypt password hash, bio, picture, favourite verse),
+  sessions (hashed tokens, device type, last used), groups, roles,
+  messages, friends, blocks, reports, chapters read, plan ticks, sync
+  backups (journal entries are **ciphertext**: encrypted on the device),
+  subscriptions, artists, songs, church enquiries and the audit log. No
+  email addresses (except church enquiries, which people type in), no
+  locations, no card details.
+- `media/`: uploaded pictures and songs, named by random ids.
+
+**Back up** both; the database with SQLite's online backup, safe while
+the service runs:
+
+```bash
+sudo -u www-data python3 -c "import sqlite3; s=sqlite3.connect('/var/lib/the-gift/community.sqlite3'); \
+  d=sqlite3.connect('/var/lib/the-gift/backup.sqlite3'); s.backup(d); d.close()"
+sudo tar czf ~/gift-data-$(date +%F).tgz -C /var/lib/the-gift backup.sqlite3 media
+```
+
+**Admin commands** (run on the box, as the service user):
+
+```bash
+cd /opt/rnk/the-gift
+alias gift='sudo -u www-data GIFT_DATA_DIR=/var/lib/the-gift python3 gift_community.py'
+gift reset-password <username>        # temporary password; ends every session
+gift make-admin <username>            # can review artists/songs/reports in the app
+gift remove-admin <username>
+gift grant <username> premium 365     # comp a plan: plus | premium | church, for N days
+```
+
+There's no email, so nobody can reset their own password: check who's
+asking (e.g. via their group leader) first. A reset makes their encrypted
+journal backup unreadable; their own device still has the journal.
+
+**Church plans** are "contact us": enquiries from the Plans page land in
+the database (Admin page → enquiries) and, if `GIFT_CONTACT_EMAIL` is set,
+are emailed through the box's `sendmail`. Once agreed, `grant` the
+church's people `church` (Premium) for the agreed time.
+
+**Outbound requests.** The server, never the visitor's browser, calls:
+OpenStreetMap (Overpass and Nominatim) for "Find a church", with
+locations rounded to ~1 km, one request at a time, cached for a day
+(`GIFT_PLACES=0` turns it off); Stripe and Google Play's API to confirm
+payments (§9).
+
+**Memory.** Indexes for all 139 translations take a few MB; search keeps
+an accent-folded copy of the last 4 searched translations (~25 MB);
+commentary blocks are cached up to 24 MB; scrypt runs at most two at a
+time (16 MB each). Uploads stream to disk. All well under the 512M
+ceiling.
+
+## 8. Zero trust, in practice
+
+- **One door** (§3): localhost only, TLS from Cloudflare's edge. HSTS is
+  sent on https responses.
+- **Every request is verified**: the session token (random, HttpOnly,
+  SameSite cookie; only its hash is stored) is checked on each call, and
+  every group, song, profile and admin action is authorised against the
+  database. The app's own checks are only for display. Sessions end after
+  30 days, or 14 idle; people can see and end their sessions under
+  Me → Devices & security.
+- **Step-up for admin**: admin work needs the password typed within the
+  last 30 minutes.
+- **No trust in the client**: chat verse quotes come from the library,
+  rewards are computed from records, plans are confirmed with Stripe or
+  Google, uploads are identified by their bytes (no SVG/HTML) and served
+  with a sandbox CSP, and POSTs must be same-origin JSON.
+- **Least privilege**: the service runs as `www-data`, can write only
+  `/var/lib/the-gift`; payment secrets come from a root-only file and
+  systemd credentials (§9), never from the checkout.
+- **Everything recorded**: sign-ins (and failures), password changes,
+  role changes, removals, reports, admin reviews and plan changes go to
+  the audit log (Admin page; kept 180 days).
+
+## 9. Payments and Google Play
+
+Payments stay off until configured. Put secrets in a root-only file the
+unit loads (systemd reads it as root before dropping to `www-data`):
+
+```bash
+sudo install -d -m 700 /etc/the-gift
+sudo tee /etc/the-gift/secrets.env >/dev/null <<'EOF'
+GIFT_STRIPE_SECRET_KEY=sk_live_…
+GIFT_STRIPE_WEBHOOK_SECRET=whsec_…
+GIFT_STRIPE_PRICES={"plus_month":"price_…","plus_year":"price_…","premium_month":"price_…","premium_year":"price_…"}
+GIFT_CONTACT_EMAIL=you@example.org
+EOF
+sudo chmod 600 /etc/the-gift/secrets.env
+```
+
+**Stripe**: create the four prices (Plus/Premium × month/year), enable the
+customer portal, and add a webhook endpoint
+`https://gift.rnkstudios.uk/api/billing/stripe/webhook` for
+`checkout.session.completed` and `customer.subscription.*`.
+
+**Google Play**: see `android/README.md`. It covers building the app,
+`GIFT_ANDROID_PACKAGE` / `GIFT_ANDROID_CERT_SHA256` (served as
+`/.well-known/assetlinks.json`), the four subscription products, and the
+service account key (`LoadCredential=` + `GIFT_PLAY_SERVICE_ACCOUNT`).
+
+After changing either, `sudo systemctl restart the-gift`.
+
+## 10. Bible chat (Domain + grounded adapter)
 
 Private stack on atlas (not in the public git tree — lives under `~/gift-model/`
 and `~/bible-train/`):

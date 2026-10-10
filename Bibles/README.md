@@ -1,6 +1,6 @@
 # Bibles
 
-140 translations across 56 languages, taken from the
+139 translations across 56 languages, taken from the
 [scrollmapper/bible_databases](https://github.com/scrollmapper/bible_databases)
 project, which in turn converted them (mostly) from
 [CrossWire SWORD](https://www.crosswire.org/sword/) modules. The translation
@@ -38,12 +38,16 @@ disagree, the stricter one is shown and the other is noted.
 |---|---:|---|
 | Public domain | 103 | Includes 2 CC0 texts. Use freely. |
 | Open licence | 13 | CC BY, BY-SA, BY-ND, or GPL. Free to redistribute under that licence's terms (attribution, share-alike, no-derivatives). |
-| Non-commercial | 18 | Copyrighted or CC BY-NC-*: free to read and share, **not** for commercial use; ND variants also forbid modified versions. |
+| Non-commercial | 17 | Copyrighted or CC BY-NC-*: free to read and share, **not** for commercial use; ND variants also forbid modified versions. |
 | CrossWire-only permission | 3 | `LITV`, `MKJV`, `ThaiKJV`: the rights-holder granted distribution permission **to CrossWire / for use with SWORD**, not to third parties generally. |
 | Unknown | 3 | `Est`, `HebModern`, `Maori`: neither source states a licence (CrossWire's Estonian note literally says "copyright status unknown"). |
 
 If you need a strictly public-domain set, use only the rows marked
-*Public domain*. Before redistributing anything else, check its terms.
+*Public domain*. The Google Play build of the app follows this rule loosely:
+it hides every *Non-commercial*, *CrossWire-only* and *Unknown* row, so the
+paid app ships only public-domain and open-licence texts (116 of 139); the
+website keeps all of them free to read, and none of them is ever part of a
+paid feature such as offline downloads. Before redistributing anything else, check its terms.
 For the CrossWire-only and Unknown rows, ask the rights-holder.
 
 | ID | Lang | Title | Licence | Class |
@@ -160,7 +164,6 @@ For the CrossWire-only and Unknown rows, ask the rights-holder.
 | `SpaPlatense` | es | Biblia Platense (Straubinger) | Public Domain | Public domain |
 | `SpaRV` | es | La Santa Biblia Reina-Valera (1909) | Public Domain | Public domain |
 | `SpaRV1865` | es | La Santa Biblia Reina-Valera (1865) con arreglos ortográficos | Public Domain | Public domain |
-| `SpaRVG` | es | Reina Valera Gómez | CC BY-NC-ND 4.0 | Non-commercial |
 | `SrKDEkavski` | sr | Serbian Bible Daničić-Karadžić Ekavski | Public Domain | Public domain |
 | `SrKDIjekav` | sr | Serbian Bible Daničić-Karadžić Ijekavski | Public Domain | Public domain |
 | `StatResGNT` | grc | Statistical Restoration Greek New Testament | CC BY 4.0 | Open licence |
@@ -221,8 +224,18 @@ them (fixed September 2026). Each fix was applied identically to
 If you re-pull from upstream, these problems come back unless they have
 been fixed there too.
 
+## Known gaps
+
+- **`SpaRVG`** (Reina Valera Gómez) was removed in October 2026: all
+  31,102 verse lines of its text file were empty, so there was nothing to
+  read. The other Spanish texts (`SpaRV`, `SpaRV1865`, `SpaPlatense`) are
+  complete.
+- Partial translations (New Testament only, single books, portions) carry
+  empty verse lines for the books they don't cover. That is the files'
+  layout, not damage; the app hides empty books and chapters.
+
 ## Want more?
 
-scrollmapper ships the same 140 translations in more formats (CSV, JSON,
+scrollmapper ships these translations (and the empty `SpaRVG`) in more formats (CSV, JSON,
 SQLite, …), and CrossWire's module list has many more translations:
 <https://www.crosswire.org/sword/modules/>.

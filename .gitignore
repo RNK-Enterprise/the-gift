@@ -4,9 +4,20 @@
 # Local tool state
 .freebuff/
 
+# The app's local data (accounts, study groups) when run from a checkout;
+# on atlas it lives in /var/lib/the-gift instead
+/.data/
+
 # Bytecode
 __pycache__/
 
 # OS cruft
 .DS_Store
 Thumbs.db
+
+# Android signing key and build output (android/README.md)
+/android/*.keystore
+/android/app/
+/android/*.aab
+/android/*.apk
+/android/build/
