@@ -64,7 +64,7 @@ CHUNK_SIZE = 256 * 1024
 MAX_CONCURRENT = int(os.environ.get("GIFT_MAX_CONCURRENT", "32"))
 ACCESS_LOG = os.environ.get("GIFT_ACCESS_LOG") == "1"
 
-REPO_URL = "https://github.com/lisasdungeon/the-gift"
+REPO_URL = "https://github.com/RNK-Enterprise/the-gift"
 
 # HTML pages only need their own inline styles and the logo/favicon images
 HTML_CSP = ("default-src 'none'; style-src 'unsafe-inline'; img-src 'self' data:; "
