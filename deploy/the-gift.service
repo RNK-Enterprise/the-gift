@@ -8,18 +8,38 @@ After=network.target
 [Service]
 User=www-data
 WorkingDirectory=/opt/rnk/the-gift
-Environment=GIFT_HOST=0.0.0.0
+# Zero trust: listen on this machine only. The public door is the Cloudflare
+# tunnel (whose connector runs here); nothing on the LAN is trusted or served.
+Environment=GIFT_HOST=127.0.0.1
 Environment=GIFT_PORT=8770
 # Files stream to the client in chunks, so RSS stays flat regardless of
 # file size; the cap bounds worker threads, not memory.
 Environment=GIFT_MAX_CONCURRENT=32
 # One line per request to the journal; off by default (errors always log).
 #Environment=GIFT_ACCESS_LOG=1
+# The app's accounts and study groups (one SQLite file). systemd creates
+# /var/lib/the-gift owned by the service user.
+StateDirectory=the-gift
+Environment=GIFT_DATA_DIR=/var/lib/the-gift
+# The church finder asks OpenStreetMap (overpass-api.de, nominatim.openstreetmap.org)
+# over HTTPS. Uncomment to switch it off and make no outbound requests at all.
+#Environment=GIFT_PLACES=0
+# Payments, church-enquiry email (HOSTING.md §9). A root-only file, read by
+# systemd before dropping to www-data; the leading "-" makes it optional.
+EnvironmentFile=-/etc/the-gift/secrets.env
+# Google Play (android/README.md): the app's identity, and the service
+# account key handed over as a systemd credential (never in the checkout).
+#Environment=GIFT_ANDROID_PACKAGE=uk.rnkstudios.thegift
+#Environment=GIFT_ANDROID_CERT_SHA256=AA:BB:…
+#LoadCredential=play.json:/etc/the-gift/play-service-account.json
+#Environment=GIFT_PLAY_PACKAGE=uk.rnkstudios.thegift
+#Environment=GIFT_PLAY_SERVICE_ACCOUNT=%d/play.json
 ExecStart=/usr/bin/python3 server.py
 Restart=always
 RestartSec=3
 
-# The server only ever reads the checkout.
+# The server only ever reads the checkout; its one writable place is the
+# StateDirectory above.
 NoNewPrivileges=true
 ProtectSystem=strict
 ProtectHome=true

@@ -15,13 +15,23 @@ jobs:
           fetch-depth: 1
           sparse-checkout: |
             server.py
+            gift_*.py
             test_server.py
             test_deploy_scripts.py
+            test_app.py
+            test_features.py
             deploy/
+            app/
           sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - run: python3 -m unittest test_server test_deploy_scripts -v
+      - run: python3 -m unittest test_server test_deploy_scripts test_app test_features -v
+      # the app is plain ES modules with no build step: check every file parses
+      # (copied to .mjs so node reads it as a module)
+      - run: |
+          for f in app/js/*.js app/js/views/*.js app/sw.js; do
+            cp "$f" "$RUNNER_TEMP/check.mjs" && node --check "$RUNNER_TEMP/check.mjs" || { echo "syntax error in $f"; exit 1; }
+          done
       # shellcheck ships on GitHub's ubuntu runners
       - run: shellcheck deploy/*.sh

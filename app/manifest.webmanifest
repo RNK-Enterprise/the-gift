@@ -1,0 +1,55 @@
+{
+  "name": "The Gift — Read it. Study it. Grow together.",
+  "short_name": "The Gift",
+  "description": "Read it. Study it. Grow together. Free Bibles in 56 languages, a daily devotional, reading plans, study groups and music.",
+  "id": "/app/",
+  "start_url": "/app/#/today",
+  "scope": "/app/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#030a1d",
+  "theme_color": "#030a1d",
+  "categories": [
+    "books",
+    "education",
+    "lifestyle"
+  ],
+  "icons": [
+    {
+      "src": "/app/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/app/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today",
+      "url": "/app/#/today"
+    },
+    {
+      "name": "Read the Bible",
+      "url": "/app/#/read"
+    },
+    {
+      "name": "Music",
+      "url": "/app/#/music"
+    },
+    {
+      "name": "Groups",
+      "url": "/app/#/community"
+    }
+  ]
+}

@@ -1,0 +1,1274 @@
+{
+ "hymns": [
+  {
+   "id": "amazing-grace",
+   "title": "Amazing Grace",
+   "author": "John Newton",
+   "year": 1779,
+   "composer": "American folk melody",
+   "tune": "NEW BRITAIN",
+   "theme": "Grace",
+   "scripture": [
+    {
+     "b": "I Chronicles",
+     "c": 17,
+     "v": 16
+    }
+   ],
+   "verses": [
+    [
+     "Amazing grace! how sweet the sound",
+     "That saved a wretch like me!",
+     "I once was lost, but now am found,",
+     "Was blind, but now I see."
+    ],
+    [
+     "'Twas grace that taught my heart to fear,",
+     "And grace my fears relieved;",
+     "How precious did that grace appear",
+     "The hour I first believed!"
+    ],
+    [
+     "Through many dangers, toils, and snares,",
+     "I have already come;",
+     "'Tis grace hath brought me safe thus far,",
+     "And grace will lead me home."
+    ],
+    [
+     "The Lord has promised good to me,",
+     "His word my hope secures;",
+     "He will my shield and portion be",
+     "As long as life endures."
+    ],
+    [
+     "Yes, when this flesh and heart shall fail,",
+     "And mortal life shall cease,",
+     "I shall possess, within the veil,",
+     "A life of joy and peace."
+    ],
+    [
+     "The earth shall soon dissolve like snow,",
+     "The sun forbear to shine;",
+     "But God, who called me here below,",
+     "Will be for ever mine."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: John Newton, 1779 · public domain",
+   "audio": {
+    "file": "audio/amazing-grace.mp3",
+    "performer": "United States Air Force Reserve Band, Southern Aire",
+    "licence": "Public domain",
+    "licence_url": null,
+    "source": "https://commons.wikimedia.org/wiki/File:Amazing_Grace_(vocalist_with_guitar)_-_Southern_Aire_-_United_States_Air_Force_Reserve_Band.mp3",
+    "bytes": 3215043
+   }
+  },
+  {
+   "id": "holy-holy-holy",
+   "title": "Holy, Holy, Holy",
+   "author": "Reginald Heber",
+   "year": 1826,
+   "composer": "John B. Dykes, 1861",
+   "tune": "NICAEA",
+   "theme": "Worship",
+   "scripture": [
+    {
+     "b": "Revelation of John",
+     "c": 4,
+     "v": 8
+    }
+   ],
+   "verses": [
+    [
+     "Holy, holy, holy! Lord God Almighty!",
+     "Early in the morning our song shall rise to thee;",
+     "Holy, holy, holy! merciful and mighty!",
+     "God in three Persons, blessed Trinity!"
+    ],
+    [
+     "Holy, holy, holy! all the saints adore thee,",
+     "Casting down their golden crowns around the glassy sea;",
+     "Cherubim and seraphim falling down before thee,",
+     "Which wert, and art, and evermore shalt be."
+    ],
+    [
+     "Holy, holy, holy! though the darkness hide thee,",
+     "Though the eye of sinful man thy glory may not see,",
+     "Only thou art holy; there is none beside thee,",
+     "Perfect in power, in love, and purity."
+    ],
+    [
+     "Holy, holy, holy! Lord God Almighty!",
+     "All thy works shall praise thy name, in earth, and sky, and sea;",
+     "Holy, holy, holy! merciful and mighty!",
+     "God in three Persons, blessed Trinity!"
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Reginald Heber, 1826 · public domain",
+   "audio": {
+    "file": "audio/holy-holy-holy.mp3",
+    "performer": "Kevin W. Davidson",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0004.ogg",
+    "bytes": 3662919
+   }
+  },
+  {
+   "id": "abide-with-me",
+   "title": "Abide with Me",
+   "author": "Henry F. Lyte",
+   "year": 1847,
+   "composer": "William H. Monk, 1861",
+   "tune": "EVENTIDE",
+   "theme": "Trust",
+   "scripture": [
+    {
+     "b": "Luke",
+     "c": 24,
+     "v": 29
+    }
+   ],
+   "verses": [
+    [
+     "Abide with me! fast falls the eventide;",
+     "The darkness deepens; Lord, with me abide!",
+     "When other helpers fail, and comforts flee,",
+     "Help of the helpless, O abide with me!"
+    ],
+    [
+     "Swift to its close ebbs out life's little day;",
+     "Earth's joys grow dim, its glories pass away;",
+     "Change and decay in all around I see;",
+     "O thou who changest not, abide with me!"
+    ],
+    [
+     "I need thy presence every passing hour;",
+     "What but thy grace can foil the tempter's power?",
+     "Who like thyself my guide and stay can be?",
+     "Through cloud and sunshine, O abide with me!"
+    ],
+    [
+     "I fear no foe, with thee at hand to bless;",
+     "Ills have no weight, and tears no bitterness;",
+     "Where is death's sting? where, grave, thy victory?",
+     "I triumph still, if thou abide with me."
+    ],
+    [
+     "Hold thou thy cross before my closing eyes;",
+     "Shine through the gloom, and point me to the skies;",
+     "Heaven's morning breaks, and earth's vain shadows flee;",
+     "In life, in death, O Lord, abide with me!"
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Henry F. Lyte, 1847 · public domain",
+   "audio": {
+    "file": "audio/abide-with-me.mp3",
+    "performer": "Ruth Golding",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0009.ogg",
+    "bytes": 4093046
+   }
+  },
+  {
+   "id": "joy-to-the-world",
+   "title": "Joy to the World",
+   "author": "Isaac Watts",
+   "year": 1719,
+   "composer": "arr. Lowell Mason, 1839",
+   "tune": "ANTIOCH",
+   "theme": "Christmas",
+   "scripture": [
+    {
+     "b": "Psalms",
+     "c": 98,
+     "v": 4
+    }
+   ],
+   "verses": [
+    [
+     "Joy to the world! the Lord is come;",
+     "Let earth receive her King;",
+     "Let every heart prepare him room,",
+     "And heaven and nature sing."
+    ],
+    [
+     "Joy to the earth! the Saviour reigns;",
+     "Let men their songs employ;",
+     "While fields and floods, rocks, hills, and plains",
+     "Repeat the sounding joy."
+    ],
+    [
+     "No more let sins and sorrows grow,",
+     "Nor thorns infest the ground;",
+     "He comes to make his blessings flow",
+     "Far as the curse is found."
+    ],
+    [
+     "He rules the world with truth and grace,",
+     "And makes the nations prove",
+     "The glories of his righteousness,",
+     "And wonders of his love."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Isaac Watts, 1719 · public domain",
+   "audio": {
+    "file": "audio/joy-to-the-world.mp3",
+    "performer": "Glenn O'Brien",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0031.ogg",
+    "bytes": 2662697
+   }
+  },
+  {
+   "id": "fairest-lord-jesus",
+   "title": "Fairest Lord Jesus",
+   "author": "German hymn, 1677; English, 1850",
+   "year": 1850,
+   "composer": "Silesian folk melody",
+   "tune": "ST. ELIZABETH",
+   "theme": "Praise",
+   "scripture": [
+    {
+     "b": "Song of Solomon",
+     "c": 5,
+     "v": 10
+    }
+   ],
+   "verses": [
+    [
+     "Fairest Lord Jesus,",
+     "Ruler of all nature,",
+     "O thou of God and man the Son,",
+     "Thee will I cherish,",
+     "Thee will I honor,",
+     "Thou, my soul's glory, joy, and crown."
+    ],
+    [
+     "Fair are the meadows,",
+     "Fairer still the woodlands,",
+     "Robed in the blooming garb of spring:",
+     "Jesus is fairer,",
+     "Jesus is purer,",
+     "Who makes the woeful heart to sing."
+    ],
+    [
+     "Fair is the sunshine,",
+     "Fairer still the moonlight,",
+     "And all the twinkling, starry host:",
+     "Jesus shines brighter,",
+     "Jesus shines purer",
+     "Than all the angels heaven can boast."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: German hymn, 1677; English, 1850, 1850 · public domain",
+   "audio": {
+    "file": "audio/fairest-lord-jesus.mp3",
+    "performer": "TriciaG",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0058.oga",
+    "bytes": 2927327
+   }
+  },
+  {
+   "id": "when-i-survey",
+   "title": "When I Survey the Wondrous Cross",
+   "author": "Isaac Watts",
+   "year": 1707,
+   "composer": "Lowell Mason, 1824",
+   "tune": "HAMBURG",
+   "theme": "The Cross",
+   "scripture": [
+    {
+     "b": "Galatians",
+     "c": 6,
+     "v": 14
+    }
+   ],
+   "verses": [
+    [
+     "When I survey the wondrous cross",
+     "On which the Prince of glory died,",
+     "My richest gain I count but loss,",
+     "And pour contempt on all my pride."
+    ],
+    [
+     "Forbid it, Lord, that I should boast,",
+     "Save in the death of Christ my God;",
+     "All the vain things that charm me most,",
+     "I sacrifice them to his blood."
+    ],
+    [
+     "See, from his head, his hands, his feet,",
+     "Sorrow and love flow mingled down;",
+     "Did e'er such love and sorrow meet,",
+     "Or thorns compose so rich a crown?"
+    ],
+    [
+     "Were the whole realm of nature mine,",
+     "That were a present far too small;",
+     "Love so amazing, so divine,",
+     "Demands my soul, my life, my all."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Isaac Watts, 1707 · public domain",
+   "audio": {
+    "file": "audio/when-i-survey.mp3",
+    "performer": "Kevin W. Davidson",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0060.ogg",
+    "bytes": 3070231
+   }
+  },
+  {
+   "id": "christ-the-lord-is-risen",
+   "title": "Christ the Lord Is Risen Today",
+   "author": "Charles Wesley",
+   "year": 1739,
+   "composer": "Lyra Davidica, 1708",
+   "tune": "EASTER HYMN",
+   "theme": "Easter",
+   "scripture": [
+    {
+     "b": "Matthew",
+     "c": 28,
+     "v": 6
+    }
+   ],
+   "verses": [
+    [
+     "Christ the Lord is risen today, Alleluia!",
+     "Sons of men and angels say, Alleluia!",
+     "Raise your joys and triumphs high, Alleluia!",
+     "Sing, ye heavens, and earth, reply, Alleluia!"
+    ],
+    [
+     "Love's redeeming work is done, Alleluia!",
+     "Fought the fight, the battle won, Alleluia!",
+     "Lo! the sun's eclipse is o'er, Alleluia!",
+     "Lo! he sets in blood no more, Alleluia!"
+    ],
+    [
+     "Vain the stone, the watch, the seal, Alleluia!",
+     "Christ has burst the gates of hell, Alleluia!",
+     "Death in vain forbids his rise, Alleluia!",
+     "Christ has opened paradise, Alleluia!"
+    ],
+    [
+     "Lives again our glorious King, Alleluia!",
+     "Where, O death, is now thy sting? Alleluia!",
+     "Once he died our souls to save, Alleluia!",
+     "Where's thy victory, boasting grave? Alleluia!"
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Charles Wesley, 1739 · public domain",
+   "audio": {
+    "file": "audio/christ-the-lord-is-risen.mp3",
+    "performer": "Eden Rea-Hedrick",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0063.ogg",
+    "bytes": 3464867
+   }
+  },
+  {
+   "id": "nearer-my-god",
+   "title": "Nearer, My God, to Thee",
+   "author": "Sarah F. Adams",
+   "year": 1841,
+   "composer": "Lowell Mason, 1856",
+   "tune": "BETHANY",
+   "theme": "Trust",
+   "scripture": [
+    {
+     "b": "Genesis",
+     "c": 28,
+     "v": 12
+    }
+   ],
+   "verses": [
+    [
+     "Nearer, my God, to thee,",
+     "Nearer to thee!",
+     "E'en though it be a cross",
+     "That raiseth me;",
+     "Still all my song shall be,",
+     "Nearer, my God, to thee,",
+     "Nearer to thee!"
+    ],
+    [
+     "Though like the wanderer,",
+     "The sun gone down,",
+     "Darkness be over me,",
+     "My rest a stone;",
+     "Yet in my dreams I'd be",
+     "Nearer, my God, to thee,",
+     "Nearer to thee!"
+    ],
+    [
+     "There let the way appear",
+     "Steps unto heaven;",
+     "All that thou sendest me",
+     "In mercy given;",
+     "Angels to beckon me",
+     "Nearer, my God, to thee,",
+     "Nearer to thee!"
+    ],
+    [
+     "Then, with my waking thoughts",
+     "Bright with thy praise,",
+     "Out of my stony griefs",
+     "Bethel I'll raise;",
+     "So by my woes to be",
+     "Nearer, my God, to thee,",
+     "Nearer to thee!"
+    ],
+    [
+     "Or if on joyful wing",
+     "Cleaving the sky,",
+     "Sun, moon, and stars forgot,",
+     "Upward I fly,",
+     "Still all my song shall be,",
+     "Nearer, my God, to thee,",
+     "Nearer to thee!"
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Sarah F. Adams, 1841 · public domain",
+   "audio": {
+    "file": "audio/nearer-my-god.mp3",
+    "performer": "Maria Kasper",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0087.ogg",
+    "bytes": 5413001
+   }
+  },
+  {
+   "id": "come-thou-fount",
+   "title": "Come, Thou Fount of Every Blessing",
+   "author": "Robert Robinson",
+   "year": 1758,
+   "composer": "American folk melody",
+   "tune": "NETTLETON",
+   "theme": "Grace",
+   "scripture": [
+    {
+     "b": "I Samuel",
+     "c": 7,
+     "v": 12
+    }
+   ],
+   "verses": [
+    [
+     "Come, thou Fount of every blessing,",
+     "Tune my heart to sing thy grace;",
+     "Streams of mercy, never ceasing,",
+     "Call for songs of loudest praise.",
+     "Teach me some melodious sonnet,",
+     "Sung by flaming tongues above;",
+     "Praise the mount! I'm fixed upon it,",
+     "Mount of God's unchanging love."
+    ],
+    [
+     "Here I raise my Ebenezer;",
+     "Hither by thy help I'm come;",
+     "And I hope, by thy good pleasure,",
+     "Safely to arrive at home.",
+     "Jesus sought me when a stranger,",
+     "Wandering from the fold of God;",
+     "He, to rescue me from danger,",
+     "Interposed his precious blood."
+    ],
+    [
+     "O to grace how great a debtor",
+     "Daily I'm constrained to be!",
+     "Let thy goodness, like a fetter,",
+     "Bind my wandering heart to thee.",
+     "Prone to wander, Lord, I feel it,",
+     "Prone to leave the God I love;",
+     "Here's my heart, O take and seal it,",
+     "Seal it for thy courts above."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Robert Robinson, 1758 · public domain",
+   "audio": {
+    "file": "audio/come-thou-fount.mp3",
+    "performer": "Anna Roberts",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0112.ogg",
+    "bytes": 2735079
+   }
+  },
+  {
+   "id": "take-my-life",
+   "title": "Take My Life, and Let It Be",
+   "author": "Frances R. Havergal",
+   "year": 1874,
+   "composer": "César Malan, 1827",
+   "tune": "HENDON",
+   "theme": "Devotion",
+   "scripture": [
+    {
+     "b": "Romans",
+     "c": 12,
+     "v": 1
+    }
+   ],
+   "verses": [
+    [
+     "Take my life, and let it be",
+     "Consecrated, Lord, to thee;",
+     "Take my hands, and let them move",
+     "At the impulse of thy love."
+    ],
+    [
+     "Take my voice, and let me sing",
+     "Always, only, for my King;",
+     "Take my lips, and let them be",
+     "Filled with messages from thee."
+    ],
+    [
+     "Take my silver and my gold;",
+     "Not a mite would I withhold;",
+     "Take my intellect, and use",
+     "Every power as thou shalt choose."
+    ],
+    [
+     "Take my will, and make it thine;",
+     "It shall be no longer mine;",
+     "Take my heart, it is thine own;",
+     "It shall be thy royal throne."
+    ],
+    [
+     "Take my love; my Lord, I pour",
+     "At thy feet its treasure-store;",
+     "Take myself, and I will be",
+     "Ever, only, all for thee."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Frances R. Havergal, 1874 · public domain",
+   "audio": {
+    "file": "audio/take-my-life.mp3",
+    "performer": "Anna Roberts",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0116.ogg",
+    "bytes": 3043554
+   }
+  },
+  {
+   "id": "a-mighty-fortress",
+   "title": "A Mighty Fortress Is Our God",
+   "author": "Martin Luther, 1529; tr. Frederick H. Hedge",
+   "year": 1853,
+   "composer": "Martin Luther, 1529",
+   "tune": "EIN' FESTE BURG",
+   "theme": "Strength",
+   "scripture": [
+    {
+     "b": "Psalms",
+     "c": 46,
+     "v": 1
+    }
+   ],
+   "verses": [
+    [
+     "A mighty fortress is our God,",
+     "A bulwark never failing;",
+     "Our helper he amid the flood",
+     "Of mortal ills prevailing.",
+     "For still our ancient foe",
+     "Doth seek to work us woe;",
+     "His craft and power are great,",
+     "And, armed with cruel hate,",
+     "On earth is not his equal."
+    ],
+    [
+     "Did we in our own strength confide,",
+     "Our striving would be losing,",
+     "Were not the right man on our side,",
+     "The man of God's own choosing.",
+     "Dost ask who that may be?",
+     "Christ Jesus, it is he;",
+     "Lord Sabaoth his name,",
+     "From age to age the same,",
+     "And he must win the battle."
+    ],
+    [
+     "And though this world, with devils filled,",
+     "Should threaten to undo us,",
+     "We will not fear, for God hath willed",
+     "His truth to triumph through us.",
+     "The prince of darkness grim,",
+     "We tremble not for him;",
+     "His rage we can endure,",
+     "For lo! his doom is sure;",
+     "One little word shall fell him."
+    ],
+    [
+     "That word above all earthly powers,",
+     "No thanks to them, abideth;",
+     "The Spirit and the gifts are ours",
+     "Through him who with us sideth.",
+     "Let goods and kindred go,",
+     "This mortal life also;",
+     "The body they may kill:",
+     "God's truth abideth still;",
+     "His kingdom is forever."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Martin Luther, 1529; tr. Frederick H. Hedge, 1853 · public domain",
+   "audio": {
+    "file": "audio/a-mighty-fortress.mp3",
+    "performer": "TriciaG",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0121.ogg",
+    "bytes": 4250733
+   }
+  },
+  {
+   "id": "blessed-assurance",
+   "title": "Blessed Assurance",
+   "author": "Fanny J. Crosby",
+   "year": 1873,
+   "composer": "Phoebe P. Knapp, 1873",
+   "tune": "ASSURANCE",
+   "theme": "Assurance",
+   "scripture": [
+    {
+     "b": "Hebrews",
+     "c": 10,
+     "v": 22
+    }
+   ],
+   "verses": [
+    [
+     "Blessed assurance, Jesus is mine!",
+     "O what a foretaste of glory divine!",
+     "Heir of salvation, purchase of God,",
+     "Born of his Spirit, washed in his blood."
+    ],
+    [
+     "Perfect submission, perfect delight,",
+     "Visions of rapture now burst on my sight;",
+     "Angels descending bring from above",
+     "Echoes of mercy, whispers of love."
+    ],
+    [
+     "Perfect submission, all is at rest;",
+     "I in my Saviour am happy and blest;",
+     "Watching and waiting, looking above,",
+     "Filled with his goodness, lost in his love."
+    ]
+   ],
+   "chorus": [
+    "This is my story, this is my song,",
+    "Praising my Saviour all the day long;",
+    "This is my story, this is my song,",
+    "Praising my Saviour all the day long."
+   ],
+   "text_credit": "Words: Fanny J. Crosby, 1873 · public domain",
+   "audio": {
+    "file": "audio/blessed-assurance.mp3",
+    "performer": "Eden Rea-Hedrick",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0212.ogg",
+    "bytes": 3886259
+   }
+  },
+  {
+   "id": "o-god-our-help",
+   "title": "O God, Our Help in Ages Past",
+   "author": "Isaac Watts",
+   "year": 1719,
+   "composer": "William Croft, 1708",
+   "tune": "ST. ANNE",
+   "theme": "Trust",
+   "scripture": [
+    {
+     "b": "Psalms",
+     "c": 90,
+     "v": 1
+    }
+   ],
+   "verses": [
+    [
+     "O God, our help in ages past,",
+     "Our hope for years to come,",
+     "Our shelter from the stormy blast,",
+     "And our eternal home!"
+    ],
+    [
+     "Under the shadow of thy throne",
+     "Thy saints have dwelt secure;",
+     "Sufficient is thine arm alone,",
+     "And our defence is sure."
+    ],
+    [
+     "Before the hills in order stood,",
+     "Or earth received her frame,",
+     "From everlasting thou art God,",
+     "To endless years the same."
+    ],
+    [
+     "A thousand ages in thy sight",
+     "Are like an evening gone;",
+     "Short as the watch that ends the night",
+     "Before the rising sun."
+    ],
+    [
+     "Time, like an ever-rolling stream,",
+     "Bears all its sons away;",
+     "They fly, forgotten, as a dream",
+     "Dies at the opening day."
+    ],
+    [
+     "O God, our help in ages past,",
+     "Our hope for years to come,",
+     "Be thou our guard while troubles last,",
+     "And our eternal home!"
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Isaac Watts, 1719 · public domain",
+   "audio": {
+    "file": "audio/o-god-our-help.mp3",
+    "performer": "Alex Clarke",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0001.ogg",
+    "bytes": 4199292
+   }
+  },
+  {
+   "id": "the-king-of-love",
+   "title": "The King of Love My Shepherd Is",
+   "author": "Henry W. Baker",
+   "year": 1868,
+   "composer": "John B. Dykes, 1868",
+   "tune": "DOMINUS REGIT ME",
+   "theme": "Comfort",
+   "scripture": [
+    {
+     "b": "Psalms",
+     "c": 23,
+     "v": 1
+    }
+   ],
+   "verses": [
+    [
+     "The King of love my Shepherd is,",
+     "Whose goodness faileth never;",
+     "I nothing lack if I am his,",
+     "And he is mine forever."
+    ],
+    [
+     "Where streams of living water flow,",
+     "My ransomed soul he leadeth,",
+     "And where the verdant pastures grow,",
+     "With food celestial feedeth."
+    ],
+    [
+     "Perverse and foolish oft I strayed,",
+     "But yet in love he sought me,",
+     "And on his shoulder gently laid,",
+     "And home, rejoicing, brought me."
+    ],
+    [
+     "In death's dark vale I fear no ill",
+     "With thee, dear Lord, beside me;",
+     "Thy rod and staff my comfort still,",
+     "Thy cross before to guide me."
+    ],
+    [
+     "Thou spread'st a table in my sight;",
+     "Thy unction grace bestoweth;",
+     "And O what transport of delight",
+     "From thy pure chalice floweth!"
+    ],
+    [
+     "And so through all the length of days",
+     "Thy goodness faileth never:",
+     "Good Shepherd, may I sing thy praise",
+     "Within thy house forever."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Henry W. Baker, 1868 · public domain",
+   "audio": {
+    "file": "audio/the-king-of-love.mp3",
+    "performer": "Carol Box",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0023.ogg",
+    "bytes": 3471889
+   }
+  },
+  {
+   "id": "near-the-cross",
+   "title": "Jesus, Keep Me Near the Cross",
+   "author": "Fanny J. Crosby",
+   "year": 1869,
+   "composer": "William H. Doane, 1869",
+   "tune": "NEAR THE CROSS",
+   "theme": "The Cross",
+   "scripture": [
+    {
+     "b": "Galatians",
+     "c": 6,
+     "v": 14
+    }
+   ],
+   "verses": [
+    [
+     "Jesus, keep me near the cross;",
+     "There a precious fountain,",
+     "Free to all, a healing stream,",
+     "Flows from Calvary's mountain."
+    ],
+    [
+     "Near the cross, a trembling soul,",
+     "Love and mercy found me;",
+     "There the Bright and Morning Star",
+     "Sheds its beams around me."
+    ],
+    [
+     "Near the cross! O Lamb of God,",
+     "Bring its scenes before me;",
+     "Help me walk from day to day",
+     "With its shadow o'er me."
+    ],
+    [
+     "Near the cross I'll watch and wait,",
+     "Hoping, trusting ever,",
+     "Till I reach the golden strand",
+     "Just beyond the river."
+    ]
+   ],
+   "chorus": [
+    "In the cross, in the cross,",
+    "Be my glory ever,",
+    "Till my raptured soul shall find",
+    "Rest beyond the river."
+   ],
+   "text_credit": "Words: Fanny J. Crosby, 1869 · public domain",
+   "audio": {
+    "file": "audio/near-the-cross.mp3",
+    "performer": "MaryAnn",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0200.ogg",
+    "bytes": 5674635
+   }
+  },
+  {
+   "id": "beneath-the-cross",
+   "title": "Beneath the Cross of Jesus",
+   "author": "Elizabeth C. Clephane",
+   "year": 1868,
+   "composer": "Frederick C. Maker, 1881",
+   "tune": "ST. CHRISTOPHER",
+   "theme": "The Cross",
+   "scripture": [
+    {
+     "b": "Isaiah",
+     "c": 32,
+     "v": 2
+    }
+   ],
+   "verses": [
+    [
+     "Beneath the cross of Jesus",
+     "I fain would take my stand,",
+     "The shadow of a mighty rock",
+     "Within a weary land;",
+     "A home within the wilderness,",
+     "A rest upon the way,",
+     "From the burning of the noontide heat,",
+     "And the burden of the day."
+    ],
+    [
+     "Upon that cross of Jesus",
+     "Mine eye at times can see",
+     "The very dying form of One",
+     "Who suffered there for me;",
+     "And from my smitten heart with tears",
+     "Two wonders I confess:",
+     "The wonders of his glorious love",
+     "And my unworthiness."
+    ],
+    [
+     "I take, O cross, thy shadow",
+     "For my abiding place;",
+     "I ask no other sunshine than",
+     "The sunshine of his face;",
+     "Content to let the world go by,",
+     "To know no gain nor loss,",
+     "My sinful self my only shame,",
+     "My glory all the cross."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Elizabeth C. Clephane, 1868 · public domain",
+   "audio": {
+    "file": "audio/beneath-the-cross.mp3",
+    "performer": "MaryAnn",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0059.ogg",
+    "bytes": 4184984
+   }
+  },
+  {
+   "id": "i-heard-the-voice",
+   "title": "I Heard the Voice of Jesus Say",
+   "author": "Horatius Bonar",
+   "year": 1846,
+   "composer": "John B. Dykes, 1868",
+   "tune": "VOX DILECTI",
+   "theme": "Invitation",
+   "scripture": [
+    {
+     "b": "Matthew",
+     "c": 11,
+     "v": 28
+    }
+   ],
+   "verses": [
+    [
+     "I heard the voice of Jesus say,",
+     "\"Come unto me and rest;",
+     "Lay down, thou weary one, lay down",
+     "Thy head upon my breast.\"",
+     "I came to Jesus as I was,",
+     "Weary, and worn, and sad;",
+     "I found in him a resting place,",
+     "And he has made me glad."
+    ],
+    [
+     "I heard the voice of Jesus say,",
+     "\"Behold, I freely give",
+     "The living water; thirsty one,",
+     "Stoop down, and drink, and live.\"",
+     "I came to Jesus, and I drank",
+     "Of that life-giving stream;",
+     "My thirst was quenched, my soul revived,",
+     "And now I live in him."
+    ],
+    [
+     "I heard the voice of Jesus say,",
+     "\"I am this dark world's Light;",
+     "Look unto me, thy morn shall rise,",
+     "And all thy day be bright.\"",
+     "I looked to Jesus, and I found",
+     "In him my Star, my Sun;",
+     "And in that light of life I'll walk,",
+     "Till travelling days are done."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Horatius Bonar, 1846 · public domain",
+   "audio": {
+    "file": "audio/i-heard-the-voice.mp3",
+    "performer": "Maria Kasper",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0077.ogg",
+    "bytes": 3075260
+   }
+  },
+  {
+   "id": "saviour-like-a-shepherd",
+   "title": "Saviour, Like a Shepherd Lead Us",
+   "author": "attr. Dorothy A. Thrupp",
+   "year": 1836,
+   "composer": "William B. Bradbury, 1859",
+   "tune": "BRADBURY",
+   "theme": "Comfort",
+   "scripture": [
+    {
+     "b": "John",
+     "c": 10,
+     "v": 11
+    }
+   ],
+   "verses": [
+    [
+     "Saviour, like a shepherd lead us;",
+     "Much we need thy tender care;",
+     "In thy pleasant pastures feed us,",
+     "For our use thy folds prepare.",
+     "Blessed Jesus, blessed Jesus,",
+     "Thou hast bought us, thine we are.",
+     "Blessed Jesus, blessed Jesus,",
+     "Thou hast bought us, thine we are."
+    ],
+    [
+     "We are thine; do thou befriend us;",
+     "Be the guardian of our way;",
+     "Keep thy flock, from sin defend us,",
+     "Seek us when we go astray.",
+     "Blessed Jesus, blessed Jesus,",
+     "Hear thy children when they pray.",
+     "Blessed Jesus, blessed Jesus,",
+     "Hear thy children when they pray."
+    ],
+    [
+     "Thou hast promised to receive us,",
+     "Poor and sinful though we be;",
+     "Thou hast mercy to relieve us,",
+     "Grace to cleanse, and power to free.",
+     "Blessed Jesus, blessed Jesus,",
+     "Early let us turn to thee.",
+     "Blessed Jesus, blessed Jesus,",
+     "Early let us turn to thee."
+    ],
+    [
+     "Early let us seek thy favor;",
+     "Early let us do thy will;",
+     "Blessed Lord and only Saviour,",
+     "With thy love our bosoms fill.",
+     "Blessed Jesus, blessed Jesus,",
+     "Thou hast loved us, love us still.",
+     "Blessed Jesus, blessed Jesus,",
+     "Thou hast loved us, love us still."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: attr. Dorothy A. Thrupp, 1836 · public domain",
+   "audio": {
+    "file": "audio/saviour-like-a-shepherd.mp3",
+    "performer": "Group",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0111.ogg",
+    "bytes": 4417661
+   }
+  },
+  {
+   "id": "doxology",
+   "title": "Praise God, from Whom All Blessings Flow",
+   "author": "Thomas Ken",
+   "year": 1674,
+   "composer": "Louis Bourgeois, 1551",
+   "tune": "OLD HUNDREDTH",
+   "theme": "Praise",
+   "scripture": [
+    {
+     "b": "Psalms",
+     "c": 150,
+     "v": 6
+    }
+   ],
+   "verses": [
+    [
+     "Praise God, from whom all blessings flow;",
+     "Praise him, all creatures here below;",
+     "Praise him above, ye heavenly host;",
+     "Praise Father, Son, and Holy Ghost."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Thomas Ken, 1674 · public domain",
+   "audio": {
+    "file": "audio/doxology.mp3",
+    "performer": "TriciaG",
+    "licence": "Public Domain",
+    "licence_url": "https://web.archive.org/web/20230926203737/https://creativecommons.org/licenses/publicdomain/",
+    "source": "https://commons.wikimedia.org/wiki/File:Army_and_Navy_Hymnal-0240.ogg",
+    "bytes": 1556792
+   }
+  },
+  {
+   "id": "rock-of-ages",
+   "title": "Rock of Ages",
+   "author": "Augustus M. Toplady",
+   "year": 1776,
+   "composer": "Thomas Hastings, 1830",
+   "tune": "TOPLADY",
+   "theme": "Grace",
+   "scripture": [
+    {
+     "b": "Isaiah",
+     "c": 26,
+     "v": 4
+    }
+   ],
+   "verses": [
+    [
+     "Rock of Ages, cleft for me,",
+     "Let me hide myself in thee;",
+     "Let the water and the blood,",
+     "From thy wounded side which flowed,",
+     "Be of sin the double cure,",
+     "Save from wrath and make me pure."
+    ],
+    [
+     "Not the labors of my hands",
+     "Can fulfil thy law's demands;",
+     "Could my zeal no respite know,",
+     "Could my tears forever flow,",
+     "All for sin could not atone;",
+     "Thou must save, and thou alone."
+    ],
+    [
+     "Nothing in my hand I bring,",
+     "Simply to thy cross I cling;",
+     "Naked, come to thee for dress;",
+     "Helpless, look to thee for grace;",
+     "Foul, I to the fountain fly;",
+     "Wash me, Saviour, or I die."
+    ],
+    [
+     "While I draw this fleeting breath,",
+     "When mine eyes shall close in death,",
+     "When I soar to worlds unknown,",
+     "See thee on thy judgment throne,",
+     "Rock of Ages, cleft for me,",
+     "Let me hide myself in thee."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Augustus M. Toplady, 1776 · public domain",
+   "audio": {
+    "file": "audio/rock-of-ages.mp3",
+    "performer": "Edison Mixed Quartet (1913)",
+    "licence": "Public domain",
+    "licence_url": null,
+    "source": "https://commons.wikimedia.org/wiki/File:EdisonMixedQuartet_RockOfAges1913.ogg",
+    "bytes": 3583955
+   }
+  },
+  {
+   "id": "what-a-friend",
+   "title": "What a Friend We Have in Jesus",
+   "author": "Joseph M. Scriven",
+   "year": 1855,
+   "composer": "Charles C. Converse, 1868",
+   "tune": "CONVERSE",
+   "theme": "Prayer",
+   "scripture": [
+    {
+     "b": "John",
+     "c": 15,
+     "v": 15
+    }
+   ],
+   "verses": [
+    [
+     "What a friend we have in Jesus,",
+     "All our sins and griefs to bear!",
+     "What a privilege to carry",
+     "Everything to God in prayer!",
+     "O what peace we often forfeit,",
+     "O what needless pain we bear,",
+     "All because we do not carry",
+     "Everything to God in prayer!"
+    ],
+    [
+     "Have we trials and temptations?",
+     "Is there trouble anywhere?",
+     "We should never be discouraged;",
+     "Take it to the Lord in prayer.",
+     "Can we find a friend so faithful,",
+     "Who will all our sorrows share?",
+     "Jesus knows our every weakness;",
+     "Take it to the Lord in prayer."
+    ],
+    [
+     "Are we weak and heavy laden,",
+     "Cumbered with a load of care?",
+     "Precious Saviour, still our refuge;",
+     "Take it to the Lord in prayer.",
+     "Do thy friends despise, forsake thee?",
+     "Take it to the Lord in prayer;",
+     "In his arms he'll take and shield thee;",
+     "Thou wilt find a solace there."
+    ]
+   ],
+   "chorus": null,
+   "text_credit": "Words: Joseph M. Scriven, 1855 · public domain",
+   "audio": {
+    "file": "audio/what-a-friend.mp3",
+    "performer": "Richard MS Irwin",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:HWW_What_A_Friend_We_Have_In_Jesus.ogg",
+    "bytes": 3335006
+   }
+  },
+  {
+   "id": "it-is-well",
+   "title": "It Is Well with My Soul",
+   "author": "Horatio G. Spafford",
+   "year": 1873,
+   "composer": "Philip P. Bliss, 1876",
+   "tune": "VILLE DU HAVRE",
+   "theme": "Peace",
+   "scripture": [
+    {
+     "b": "Philippians",
+     "c": 4,
+     "v": 7
+    }
+   ],
+   "verses": [
+    [
+     "When peace, like a river, attendeth my way,",
+     "When sorrows like sea billows roll;",
+     "Whatever my lot, thou hast taught me to say,",
+     "It is well, it is well with my soul."
+    ],
+    [
+     "Though Satan should buffet, though trials should come,",
+     "Let this blest assurance control,",
+     "That Christ has regarded my helpless estate,",
+     "And hath shed his own blood for my soul."
+    ],
+    [
+     "My sin, oh, the bliss of this glorious thought!",
+     "My sin, not in part but the whole,",
+     "Is nailed to the cross, and I bear it no more,",
+     "Praise the Lord, praise the Lord, O my soul!"
+    ],
+    [
+     "And, Lord, haste the day when the faith shall be sight,",
+     "The clouds be rolled back as a scroll;",
+     "The trump shall resound, and the Lord shall descend,",
+     "Even so, it is well with my soul."
+    ]
+   ],
+   "chorus": [
+    "It is well with my soul,",
+    "It is well, it is well with my soul."
+   ],
+   "text_credit": "Words: Horatio G. Spafford, 1873 · public domain",
+   "audio": {
+    "file": "audio/it-is-well.mp3",
+    "performer": "Instrumental setting by Rabanus Flavus",
+    "licence": "CC0",
+    "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "source": "https://commons.wikimedia.org/wiki/File:It_Is_Well_with_My_Soul.mid",
+    "bytes": 2158047
+   }
+  }
+ ]
+}
