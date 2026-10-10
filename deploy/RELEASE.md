@@ -150,9 +150,11 @@ GitHub identity per command, and never run `gh auth switch` (see
 `Rnk Studios/AGENTS.md`):
 
 ```bash
-git tag -a "$NEW" -m "$NEW" && git push origin "$NEW"
-GH_TOKEN="$(gh auth token -u <account>)" gh release create "$NEW" \
-  --repo lisasdungeon/the-gift --title "$NEW" --notes-from-tag
+T="$(gh auth token -u RNK-Enterprise)"
+git tag -a "$NEW" -m "$NEW"
+git push "https://x-access-token:${T}@github.com/RNK-Enterprise/the-gift.git" "$NEW"
+GH_TOKEN="$T" gh release create "$NEW" \
+  --repo RNK-Enterprise/the-gift --title "$NEW" --notes-from-tag
 ```
 
 ## 6. Rollback

@@ -229,7 +229,7 @@ export async function openSettings() {
     h('div', { class: 'about-links' },
       h('a', { href: '/' }, 'The library'),
       h('a', { href: '/Bibles/README.md' }, 'Translation licences'),
-      h('a', { href: 'https://github.com/lisasdungeon/the-gift', rel: 'noopener', target: '_blank' }, 'Source code')));
+      h('a', { href: 'https://github.com/RNK-Enterprise/the-gift', rel: 'noopener', target: '_blank' }, 'Source code')));
   if (installPrompt) {
     about.append(h('button', { class: 'btn primary', type: 'button', on: { click: async () => {
       installPrompt.prompt();

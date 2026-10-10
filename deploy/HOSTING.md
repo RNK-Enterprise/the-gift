@@ -27,8 +27,13 @@ can be rebuilt from the repo and nothing drifts silently:
 ```bash
 sudo mkdir -p /opt/rnk && sudo chown rnk:rnk /opt/rnk
 # as rnk: clone the repo — git clone carries the whole library (Bibles/formats is tracked)
-git clone https://github.com/lisasdungeon/the-gift.git /opt/rnk/the-gift
+git clone https://github.com/RNK-Enterprise/the-gift.git /opt/rnk/the-gift
 ```
+
+The repository moved from `lisasdungeon/the-gift` to `RNK-Enterprise/the-gift`
+(the old name redirects). On a checkout cloned before the move, point it at
+the new home once, as `rnk`:
+`git -C /opt/rnk/the-gift remote set-url origin https://github.com/RNK-Enterprise/the-gift.git`
 
 The checkout is **owned by `rnk`**, the same user that runs the cron jobs.
 Every git command in these docs (`pull`, `reset`) runs as `rnk`, without

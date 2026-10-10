@@ -1,6 +1,6 @@
 # The Gift
 
-[![test](https://github.com/lisasdungeon/the-gift/actions/workflows/test.yml/badge.svg)](https://github.com/lisasdungeon/the-gift/actions/workflows/test.yml)
+[![test](https://github.com/RNK-Enterprise/the-gift/actions/workflows/test.yml/badge.svg)](https://github.com/RNK-Enterprise/the-gift/actions/workflows/test.yml)
 
 A personal library of free-to-read Bible translations and study resources, most of them
 public domain, pulled together from established open-data projects rather than built from
@@ -61,7 +61,7 @@ app's `.data/` included). For hosting
 on the RNK box (192.168.1.202) see [deploy/HOSTING.md](deploy/HOSTING.md);
 for a full release walkthrough see [deploy/RELEASE.md](deploy/RELEASE.md).
 Bulk/programmatic access should clone the repo
-(`git clone https://github.com/lisasdungeon/the-gift.git`), not crawl HTTP.
+(`git clone https://github.com/RNK-Enterprise/the-gift.git`), not crawl HTTP.
 
 ## The app
 
@@ -144,7 +144,7 @@ to be copied as templates. Docs that should stay truthful: `deploy/HOSTING.md` (
 ## Changelog
 
 Releases are mostly about the server that serves the library. Details in the
-[GitHub releases](https://github.com/lisasdungeon/the-gift/releases).
+[GitHub releases](https://github.com/RNK-Enterprise/the-gift/releases).
 
 - **v1.2.0** (Oct 2026) — text repairs to 7 translations (Albanian, Modern Hebrew
   and Croatian each had another Bible's file header glued onto their last
